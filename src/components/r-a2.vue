@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="a2">
     <Boxing />
 
     <Armor />

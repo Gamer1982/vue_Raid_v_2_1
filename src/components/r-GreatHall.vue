@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="greatHall">
       <div class="hall">
         <h2>Great Hall</h2>
-        <br />
+
         <div class="box">
           <p>HP</p>
           <select name="HP">
@@ -107,8 +107,24 @@
 
 <script>
 export default {
-	name: "GreatHall",
+  name: "GreatHall",
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.hall {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hall .box {
+  max-width: 15%;
+  margin: 0.5%;
+  select {
+    width: 95%;
+  }
+}
+</style>

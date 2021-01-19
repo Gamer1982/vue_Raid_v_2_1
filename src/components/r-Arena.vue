@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="arena">
       <h2>Arena</h2>
-      <br />
+
       <div class="box">
         <select name="HP">
           <option value="1" class="hp_100 def_100 atk_100">+1% </option
@@ -32,4 +32,20 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.arena {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  select {
+    width: 80%;
+  }
+}
+
+.arena .box {
+  min-width: 90%;
+  margin: 5%;
+}
+</style>

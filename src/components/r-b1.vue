@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <GreatHall />
+  <div class="b1">
+    <GreatHall class="b1__greatHall" />
 
-    <Arena />
+    <Arena class="b1__Arena" />
 
-    <GreatSkill />
+    <GreatSkill class="b1__greatSkill" />
   </div>
 </template>
 
@@ -19,4 +19,18 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.b1 {
+  display: flex;
+  justify-content: space-between;
+  &__greatHall {
+    width: 50%;
+  }
+  &__Arena {
+    width: 10%;
+  }
+  &__greatSkill {
+    width: 35%;
+  }
+}
+</style>

@@ -1,0 +1,71 @@
+<template>
+  <div class="wrapper sets">
+    <select name="set" class="sett">
+      <option value="0" class="choose" disabled selected>Choose a set </option
+      ><option value="7.5" class="hp_100 life">Life(2) +15%HP </option
+      ><option value="7.5" class="atk_100 offense">Offense(2) +15%ATK </option
+      ><option value="7.5" class="def_100 defense">Defense(2) +15%DEF </option
+      ><option value="6" class="cRate criticalRate">C.Rate(2) +12% </option
+      ><option value="20" class="acc accuracy">Accuracy(2) +40ACC </option
+      ><option value="6" class="spd speed">Speed(2) +12%SPD </option
+      ><option value="20" class="resist resistance">Resistance(2) +40 </option
+      ><option value="10" class="cDmg critDamage">C.Damage(2) +20% </option
+      ><option value="0" class="lifesteal">Lifesteal(4) </option
+      ><option value="0" class="destroy">Destroy(4) </option
+      ><option value="0" class="retaliation">Retaliation(4) </option
+      ><option value="0" class="fury">Fury(4) </option
+      ><option value="0" class="curing">Curing(4) </option
+      ><option value="0" class="reflex">Reflex(4) </option
+      ><option value="0" class="cursed">Cursed(4) </option
+      ><option value="0" class="toxic">Toxic(4) </option
+      ><option value="0" class="frost">Frost(4) </option
+      ><option value="0" class="daze">Daze(4) </option
+      ><option value="0" class="immunity">Immunity(4) </option
+      ><option value="0" class="avenging">Avenging(4) </option
+      ><option value="0" class="shield">Shield(4) </option
+      ><option value="0" class="stalwart">Stalwart(4) </option
+      ><option value="0" class="frenzy">Frenzy(4) </option
+      ><option value="0" class="regeneration">Regeneration(4) </option
+      ><option value="0" class="stun">Stun(4) </option
+      ><option value="0" class="relentless">Relentless(4) </option
+      ><option value="0" class="savage">Savage(4) </option
+      ><option value="0" class="taunting">Taunting(4) </option
+      ><option value="7.5" class="atk_100 cruel">Cruel(2) +15%ATK </option
+      ><option value="7.5" class="hp_100 immortal">Immortal(2) +15%HP </option
+      ><option value="7.5" class="hp_100 divineLive">D.Life(2) +15%HP </option
+      ><option value="7.5" class="atk_100 divineOffense"
+        >D.Offense(2) +15%ATK </option
+      ><option value="6" class="cRate divineCriticalRate"
+        >D.C.Rate(2) +12% </option
+      ><option value="6" class="spd divineSpeed">D.Speed(2)+12%SPD </option
+      ><option value="7.5" class="cDmg spd swiftParry"
+        >Swift parry(4)+18%SPD+30%C.Dmg </option
+      ><option value="5" class="hp_100 def_100 deflection"
+        >Deflection(4)+20HP%+20DEF% </option
+      ><option value="5" class="hp_100 def_100 resilience"
+        >Resilience(2)+10HP%+10DEF% </option
+      ><option value="2.5" class="acc spd perception"
+        >Perception(2)+40ACC +5%SPD </option
+      ><option value="2.5" class="atk_100 cRate fatal"
+        >Fatal(2) +15%ATK C.Rate +5% </option
+      ><option value="10" class="resist untouchable"
+        >Untouchable(4) +40 Resist +immunity for 2 turns </option
+      ><option value="7.5" class="cDmg affinitybreaker"
+        >Affinitybreaker (4) - C. DMG +30%. 20% chance to change weak hit </option
+      ><option value="0" class="frostbite">Frostbite(2) </option></select
+    >
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Sets",
+};
+</script>
+
+<style lang="scss">
+.sett {
+  max-width: 60%;
+  margin-left: 10%;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="stats">
       <div class="start startHp">
         <input
@@ -83,4 +83,22 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.stats {
+  font-size: 4.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+}
+.start {
+  min-width: 100%;
+  input {
+    width: 25%;
+    padding: 0;
+    height: 4vh;
+  }
+}
+.stats p {
+  display: inline-block;
+}
+</style>

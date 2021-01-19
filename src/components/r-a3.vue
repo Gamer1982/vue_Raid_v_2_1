@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="a3">
     <Ring />
 
     <Earing />
@@ -19,4 +19,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.a3 {
+  display: flex;
+}
+</style>
