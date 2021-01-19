@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       title: localStorage.getItem("title") || "",
-      selected: localStorage.getItem("language") || "en",
+      selected: localStorage.getItem("language") || "en", //Выбор языка
       option: [
         0,
         0,
@@ -117,9 +117,9 @@ export default {
   methods: {
     changeLanguage() {
       //Замена языка в локальном хранилище и Store для сохранения языка при перезагрузке
-      console.log(this, lang.en);
+      console.log(this, lang[this.selected]);
       localStorage.setItem("language", this.selected);
-      dispatch("GET_LANG_TO_STATE", lang.ru);
+      this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selected]);
     },
 
     changeTitle() {
@@ -136,6 +136,9 @@ export default {
       this.option = new Array(116).fill(0);
     },
     ...mapActions(["GET_OPTION_FROM_TOKEN", "GET_LANG_TO_STATE"]),
+  },
+  mounted() {
+    this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selected]);
   },
 };
 </script>

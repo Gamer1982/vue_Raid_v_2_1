@@ -5,13 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    language: localStorage.getItem("language") || "en", //Выбор языка
-    $lang: {}, //Языковой пакет
+    lang: {}, //Языковой пакет
     options: [], //Пакет параметров
   },
   mutations: {
-    CHANGE_LANG_TO_STATE(state, lang) {
-      state._lang = lang;
+    CHANGE_LANG_TO_STATE(state, item) {
+      state.lang = item;
+    },
+    CHANGE_LANGUAGE_TO_STATE(state, item) {
+      state.language = item;
     },
   },
   actions: {

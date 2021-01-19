@@ -7,44 +7,75 @@
 
       <div class="baza weapon">
         <select name="Weapon" class="wep">
-          <option value="0" class="atk_sum">ATK+ </option></select
+          <option value="0" class="atk_sum">{{
+            $store.state.lang.atk
+          }}</option></select
         ><input type="number" /><select name="Weapon1">
-          <option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="spd" disabled>SPD </option
+          <option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="spd" disabled
+            >{{ $store.state.lang.spd }} </option
           ><select value="0" class="cRate" disabled
-            >C.RATE </select
-          ><option value="0" class="cDmg" selected>C.DMG </option
-          ><option value="0" class="resist">RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option></select
+            >{{
+              $store.state.lang.cRate
+            }} </select
+          ><option value="0" class="cDmg" selected
+            >{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="resist">{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" disabled
+            >{{ $store.state.lang.acc }} </option
+          ><option value="0" class="atk_100"
+            >{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100"
+            >{{ $store.state.lang.hp }}%
+          </option></select
         ><input type="number" /><select name="Weapon2">
-          <option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="spd" disabled>SPD </option
-          ><option value="0" class="cRate" selected>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="resist">RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option></select
+          <option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="spd" disabled
+            >{{ $store.state.lang.spd }} </option
+          ><option value="0" class="cRate" disabled
+            >{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled
+            >{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="resist">{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" selected
+            >{{ $store.state.lang.acc }} </option
+          ><option value="0" class="atk_100"
+            >{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100"
+            >{{ $store.state.lang.hp }}%
+          </option></select
         ><input type="number" /><select name="Weapon3">
-          <option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="spd" selected>SPD </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="resist">RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option></select
+          <option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="spd" disabled
+            >{{ $store.state.lang.spd }} </option
+          ><option value="0" class="cRate" disabled
+            >{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled
+            >{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="resist">{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" selected
+            >{{ $store.state.lang.acc }} </option
+          ><option value="0" class="atk_100"
+            >{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100"
+            >{{ $store.state.lang.hp }}%
+          </option></select
         ><input type="number" /><select name="Weapon4">
-          <option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="spd" disabled>SPD </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="resist">RESIST </option
-          ><option value="0" class="acc" selected>ACC </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option></select
+          <option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="spd" disabled
+            >{{ $store.state.lang.spd }} </option
+          ><option value="0" class="cRate" disabled
+            >{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled
+            >{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="resist">{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" selected
+            >{{ $store.state.lang.acc }} </option
+          ><option value="0" class="atk_100"
+            >{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100"
+            >{{ $store.state.lang.hp }}%
+          </option></select
         ><input type="number" />
       </div>
     </div>

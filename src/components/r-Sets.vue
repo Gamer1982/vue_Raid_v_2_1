@@ -1,58 +1,88 @@
 <template>
   <div class="wrapper sets">
     <select name="set" class="sett">
-      <option value="0" class="choose" disabled selected>Choose a set </option
-      ><option value="7.5" class="hp_100 life">Life(2) +15%HP </option
-      ><option value="7.5" class="atk_100 offense">Offense(2) +15%ATK </option
-      ><option value="7.5" class="def_100 defense">Defense(2) +15%DEF </option
-      ><option value="6" class="cRate criticalRate">C.Rate(2) +12% </option
-      ><option value="20" class="acc accuracy">Accuracy(2) +40ACC </option
-      ><option value="6" class="spd speed">Speed(2) +12%SPD </option
-      ><option value="20" class="resist resistance">Resistance(2) +40 </option
-      ><option value="10" class="cDmg critDamage">C.Damage(2) +20% </option
-      ><option value="0" class="lifesteal">Lifesteal(4) </option
-      ><option value="0" class="destroy">Destroy(4) </option
-      ><option value="0" class="retaliation">Retaliation(4) </option
-      ><option value="0" class="fury">Fury(4) </option
-      ><option value="0" class="curing">Curing(4) </option
-      ><option value="0" class="reflex">Reflex(4) </option
-      ><option value="0" class="cursed">Cursed(4) </option
-      ><option value="0" class="toxic">Toxic(4) </option
-      ><option value="0" class="frost">Frost(4) </option
-      ><option value="0" class="daze">Daze(4) </option
-      ><option value="0" class="immunity">Immunity(4) </option
-      ><option value="0" class="avenging">Avenging(4) </option
-      ><option value="0" class="shield">Shield(4) </option
-      ><option value="0" class="stalwart">Stalwart(4) </option
-      ><option value="0" class="frenzy">Frenzy(4) </option
-      ><option value="0" class="regeneration">Regeneration(4) </option
-      ><option value="0" class="stun">Stun(4) </option
-      ><option value="0" class="relentless">Relentless(4) </option
-      ><option value="0" class="savage">Savage(4) </option
-      ><option value="0" class="taunting">Taunting(4) </option
-      ><option value="7.5" class="atk_100 cruel">Cruel(2) +15%ATK </option
-      ><option value="7.5" class="hp_100 immortal">Immortal(2) +15%HP </option
-      ><option value="7.5" class="hp_100 divineLive">D.Life(2) +15%HP </option
+      <option value="0" class="choose" disabled selected>{{
+        $store.state.lang.choose
+      }}</option
+      ><option value="7.5" class="hp_100 life"
+        >{{ $store.state.lang.life }} </option
+      ><option value="7.5" class="atk_100 offense"
+        >{{ $store.state.lang.offense }} </option
+      ><option value="7.5" class="def_100 defense"
+        >{{ $store.state.lang.defense }} </option
+      ><option value="6" class="cRate criticalRate"
+        >{{ $store.state.lang.criticalRate }} </option
+      ><option value="20" class="acc accuracy"
+        >{{ $store.state.lang.accuracy }} </option
+      ><option value="6" class="spd speed"
+        >{{ $store.state.lang.speed }} </option
+      ><option value="20" class="resist resistance"
+        >{{ $store.state.lang.resistance }} </option
+      ><option value="10" class="cDmg critDamage"
+        >{{ $store.state.lang.critDamage }} </option
+      ><option value="0" class="lifesteal"
+        >{{ $store.state.lang.lifesteal }} </option
+      ><option value="0" class="destroy"
+        >{{ $store.state.lang.destroy }} </option
+      ><option value="0" class="retaliation"
+        >{{ $store.state.lang.retaliation }} </option
+      ><option value="0" class="fury">{{ $store.state.lang.fury }} </option
+      ><option value="0" class="curing">{{ $store.state.lang.curing }} </option
+      ><option value="0" class="reflex">{{ $store.state.lang.reflex }} </option
+      ><option value="0" class="cursed">{{ $store.state.lang.cursed }} </option
+      ><option value="0" class="toxic">{{ $store.state.lang.toxic }} </option
+      ><option value="0" class="frost">{{ $store.state.lang.frost }} </option
+      ><option value="0" class="daze">{{ $store.state.lang.daze }} </option
+      ><option value="0" class="immunity"
+        >{{ $store.state.lang.immunity }} </option
+      ><option value="0" class="avenging"
+        >{{ $store.state.lang.avenging }} </option
+      ><option value="0" class="shield">{{ $store.state.lang.shield }}</option
+      ><option value="0" class="stalwart">{{
+        $store.state.lang.stalwart
+      }}</option
+      ><option value="0" class="frenzy">{{ $store.state.lang.frenzy }} </option
+      ><option value="0" class="regeneration"
+        >{{ $store.state.lang.regeneration }} </option
+      ><option value="0" class="stun">{{ $store.state.lang.stun }} </option
+      ><option value="0" class="relentless"
+        >{{ $store.state.lang.relentless }} </option
+      ><option value="0" class="savage">{{ $store.state.lang.savage }} </option
+      ><option value="0" class="taunting"
+        >{{ $store.state.lang.taunting }} </option
+      ><option value="7.5" class="atk_100 cruel"
+        >{{ $store.state.lang.cruel }} </option
+      ><option value="7.5" class="hp_100 immortal"
+        >{{ $store.state.lang.immortal }} </option
+      ><option value="7.5" class="hp_100 divineLive"
+        >{{ $store.state.lang.divineLive }} </option
       ><option value="7.5" class="atk_100 divineOffense"
-        >D.Offense(2) +15%ATK </option
+        >{{ $store.state.lang.divineOffense }} </option
       ><option value="6" class="cRate divineCriticalRate"
-        >D.C.Rate(2) +12% </option
-      ><option value="6" class="spd divineSpeed">D.Speed(2)+12%SPD </option
+        >{{ $store.state.lang.divineCriticalRate }} </option
+      ><option value="6" class="spd divineSpeed"
+        >{{ $store.state.lang.divineSpeed }} </option
       ><option value="7.5" class="cDmg spd swiftParry"
-        >Swift parry(4)+18%SPD+30%C.Dmg </option
+        >{{ $store.state.lang.swiftParry }} </option
       ><option value="5" class="hp_100 def_100 deflection"
-        >Deflection(4)+20HP%+20DEF% </option
-      ><option value="5" class="hp_100 def_100 resilience"
-        >Resilience(2)+10HP%+10DEF% </option
+        >{{ $store.state.lang.deflection }} </option
+      ><option value="5" class="hp_100 def_100 resilience">{{
+        $store.state.lang.resilience
+      }}</option
       ><option value="2.5" class="acc spd perception"
-        >Perception(2)+40ACC +5%SPD </option
-      ><option value="2.5" class="atk_100 cRate fatal"
-        >Fatal(2) +15%ATK C.Rate +5% </option
-      ><option value="10" class="resist untouchable"
-        >Untouchable(4) +40 Resist +immunity for 2 turns </option
-      ><option value="7.5" class="cDmg affinitybreaker"
-        >Affinitybreaker (4) - C. DMG +30%. 20% chance to change weak hit </option
-      ><option value="0" class="frostbite">Frostbite(2) </option></select
+        >{{ $store.state.lang.perception }} </option
+      ><option value="2.5" class="atk_100 cRate fatal">{{
+        $store.state.lang.fatal
+      }}</option
+      ><option value="10" class="resist untouchable">{{
+        $store.state.lang.untouchable
+      }}</option
+      ><option value="7.5" class="cDmg affinitybreaker">{{
+        $store.state.lang.affinitybreaker
+      }}</option
+      ><option value="0" class="frostbite"
+        >{{ $store.state.lang.frostbite }}
+      </option></select
     >
   </div>
 </template>
