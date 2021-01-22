@@ -2,10 +2,10 @@
   <div class="wrapper">
     <div class="greatHall">
       <div class="hall">
-        <h2>Great Hall</h2>
+        <h2>{{ $store.state.lang.greatHall }}</h2>
 
         <div class="box">
-          <p>HP</p>
+          <p>{{ $store.state.lang.hp }}</p>
           <select name="HP">
             <option value="0" class="hp_100">+0% </option
             ><option value="2" class="hp_100">+2% </option
@@ -21,7 +21,7 @@
           >
         </div>
         <div class="box">
-          <p>ATK</p>
+          <p>{{ $store.state.lang.atk }}</p>
           <select name="ATK">
             <option value="0" class="atk_100">+0% </option
             ><option value="2" class="atk_100">+2% </option
@@ -37,7 +37,7 @@
           >
         </div>
         <div class="box">
-          <p>DEF</p>
+          <p>{{ $store.state.lang.def }}</p>
           <select name="DEF">
             <option value="0" class="def_100">+0% </option
             ><option value="2" class="def_100">+2% </option
@@ -53,7 +53,7 @@
           >
         </div>
         <div class="box">
-          <p>C.DMG</p>
+          <p>{{ $store.state.lang.cDmg }}</p>
           <select name="C.DMG">
             <option value="0" class="cDmg">+0% </option
             ><option value="2" class="cDmg">+2% </option
@@ -69,7 +69,7 @@
           >
         </div>
         <div class="box">
-          <p>RES</p>
+          <p>{{ $store.state.lang.resMin }}</p>
           <select name="RESIST">
             <option value="0" class="resist">+0 </option
             ><option value="5" class="resist">+5 </option
@@ -85,7 +85,7 @@
           >
         </div>
         <div class="box">
-          <p>ACC</p>
+          <p>{{ $store.state.lang.acc }}</p>
           <select name="ACC">
             <option value="0" class="acc">+0 </option
             ><option value="5" class="acc">+5 </option

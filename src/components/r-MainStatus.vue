@@ -2,75 +2,42 @@
   <div class="wrapper">
     <div class="stats">
       <div class="start startHp">
-        <input
-          type="number"
-          class="stats_input startHp_input"
-          placeholder="Start HP"
-        /><output class="stats_output startHp_output">+0</output
-        ><span>HP-</span>
+        <input type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+0</output><span>{{ $store.state.lang.hp }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startAtk">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start ATK"
-        /><output class="stats_output">+0</output><span>ATK-</span>
+        <input type="number" class="stats_input" placeholder="Start ATK" /><output class="stats_output">+0</output><span>{{ $store.state.lang.atk }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startDef">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start DEF"
-        /><output class="stats_output">+0</output><span>DEF-</span>
+        <input type="number" class="stats_input" placeholder="Start DEF" /><output class="stats_output">+0</output><span>{{ $store.state.lang.def }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startSpeed">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start SPD"
-        /><output class="stats_output">+0</output><span>SPD-</span>
+        <input type="number" class="stats_input" placeholder="Start SPD" /><output class="stats_output">+0</output><span>{{ $store.state.lang.spd }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startCrate">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start C.Rate"
-        /><output class="stats_output">+0%</output><span>C.R-</span>
+        <input type="number" class="stats_input" placeholder="Start C.Rate" /><output class="stats_output">+0%</output><span>C.R-</span>
         <p>0%</p>
       </div>
 
       <div class="start startCdmg">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start C.Dmg"
-        /><output class="stats_output">+0%</output><span>C.D-</span>
+        <input type="number" class="stats_input" placeholder="Start C.Dmg" /><output class="stats_output">+0%</output><span>C.D-</span>
         <p>0%</p>
       </div>
 
       <div class="start startResist">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start RES"
-        /><output class="stats_output">+0</output><span>RES-</span>
+        <input type="number" class="stats_input" placeholder="Start RES" /><output class="stats_output">+0</output><span>{{ $store.state.lang.resMin }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startAcc">
-        <input
-          type="number"
-          class="stats_input"
-          placeholder="Start ACC"
-        /><output class="stats_output">+0</output><span>ACC-</span>
+        <input type="number" class="stats_input" placeholder="Start ACC" /><output class="stats_output">+0</output><span>{{ $store.state.lang.acc }}-</span>
         <p>0</p>
       </div>
     </div>

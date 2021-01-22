@@ -1,19 +1,10 @@
 <template>
   <div class="hello">
     <div class="lang">
-      <input
-        placeholder="For screenshot"
-        v-model="title"
-        @change="changeTitle"
-      />
+      <input placeholder="For screenshot" v-model="title" @change="changeTitle" />
       <input type="button" value="save" @click="saveTitle" />
       <input type="button" value="reset" @click="allReset" />
-      <select
-        name="langg"
-        class="langg"
-        v-model="selected"
-        @change="changeLanguage"
-      >
+      <select name="langg" class="langg" v-model="selected" @change="changeLanguage">
         <option value="en">en </option
         ><option value="ru">ru </option
         ><option value="fr">fr </option
@@ -53,64 +44,7 @@ export default {
     return {
       title: localStorage.getItem("title") || "",
       selected: localStorage.getItem("language") || "en", //Выбор языка
-      option: [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-      ],
+      option: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       lan: {},
     };
   },
@@ -128,7 +62,7 @@ export default {
     },
     saveTitle() {
       //Сохранение в локальном хранилище нового набора option с использованием Title(Имени)
-      localStorage.setItem(`${this.title.toUpperCase()}`, this.option);
+      localStorage.setItem(`${this.title.toUpperCase()}`, this.$store.state.options);
     },
     allReset() {
       //Сброс option for 0
@@ -138,7 +72,8 @@ export default {
     ...mapActions(["GET_OPTION_FROM_TOKEN", "GET_LANG_TO_STATE"]),
   },
   mounted() {
-    this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selected]);
+		this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selected]);
+		this.$store.commit("CHANGE_OPTIONS_TO_STATE", new Array(120).fill(0))
   },
 };
 </script>

@@ -3,66 +3,66 @@
     <div class="top top_boxing">
       <div class="image boxing-1"></div>
       <div class="image2 boxing-1"></div>
-      <Sets />
+      <Sets index="27" />
 
       <div class="baza boxing">
         <select name="Boxing" class="wep">
-          <option value="0" class="atk_sum">ATK+ </option
-          ><option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="def_sum">DEF+ </option
-          ><option value="0" class="cRate" selected>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option
-          ><option value="0" class="def_100">DEF% </option></select
+          <option value="0" class="atk_sum">{{ $store.state.lang.atk }}+ </option
+          ><option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="def_sum">{{ $store.state.lang.def }}+ </option
+          ><option value="0" class="cRate" selected>{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled>{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="atk_100">{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100">{{ $store.state.lang.hp }}% </option
+          ><option value="0" class="def_100">{{ $store.state.lang.def }}% </option></select
         ><input type="number" /><select name="Boxing1">
-          <option value="0" class="atk_sum">ATK+ </option
-          ><option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="def_sum">DEF+ </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" selected>C.DMG </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option
-          ><option value="0" class="def_100">DEF% </option
-          ><option value="0" class="spd">SPD </option
-          ><option value="0" class="resist" disabled>RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option></select
+          <option value="0" class="atk_sum">{{ $store.state.lang.atk }}+ </option
+          ><option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="def_sum">{{ $store.state.lang.def }}+ </option
+          ><option value="0" class="cRate" disabled>{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" selected>{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="atk_100">{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100">{{ $store.state.lang.hp }}% </option
+          ><option value="0" class="def_100">{{ $store.state.lang.def }}% </option
+          ><option value="0" class="spd">{{ $store.state.lang.spd }} </option
+          ><option value="0" class="resist" disabled>{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" disabled>{{ $store.state.lang.acc }} </option></select
         ><input type="number" /><select name="Boxing2">
-          <option value="0" class="atk_sum">ATK+ </option
-          ><option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="def_sum">DEF+ </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option
-          ><option value="0" class="def_100">DEF% </option
-          ><option value="0" class="spd">SPD </option
-          ><option value="0" class="resist" selected>RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option></select
+          <option value="0" class="atk_sum">{{ $store.state.lang.atk }}+ </option
+          ><option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="def_sum">{{ $store.state.lang.def }}+ </option
+          ><option value="0" class="cRate" disabled>{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled>{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="atk_100">{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100">{{ $store.state.lang.hp }}% </option
+          ><option value="0" class="def_100">{{ $store.state.lang.def }}% </option
+          ><option value="0" class="spd">{{ $store.state.lang.spd }} </option
+          ><option value="0" class="resist" selected>{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" disabled>{{ $store.state.lang.acc }} </option></select
         ><input type="number" /><select name="Boxing3">
-          <option value="0" class="atk_sum">ATK+ </option
-          ><option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="def_sum">DEF+ </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option
-          ><option value="0" class="def_100">DEF% </option
-          ><option value="0" class="spd" selected>SPD </option
-          ><option value="0" class="resist" disabled>RESIST </option
-          ><option value="0" class="acc" disabled>ACC </option></select
+          <option value="0" class="atk_sum">{{ $store.state.lang.atk }}+ </option
+          ><option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="def_sum">{{ $store.state.lang.def }}+ </option
+          ><option value="0" class="cRate" disabled>{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled>{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="atk_100">{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100">{{ $store.state.lang.hp }}% </option
+          ><option value="0" class="def_100">{{ $store.state.lang.def }}% </option
+          ><option value="0" class="spd" selected>{{ $store.state.lang.spd }} </option
+          ><option value="0" class="resist" disabled>{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" disabled>{{ $store.state.lang.acc }} </option></select
         ><input type="number" /><select name="Boxing4">
-          <option value="0" class="atk_sum">ATK+ </option
-          ><option value="0" class="hp_sum">HP+ </option
-          ><option value="0" class="def_sum">DEF+ </option
-          ><option value="0" class="cRate" disabled>C.RATE </option
-          ><option value="0" class="cDmg" disabled>C.DMG </option
-          ><option value="0" class="atk_100">ATK% </option
-          ><option value="0" class="hp_100">HP% </option
-          ><option value="0" class="def_100">DEF% </option
-          ><option value="0" class="spd">SPD </option
-          ><option value="0" class="resist" disabled>RESIST </option
-          ><option value="0" class="acc" selected>ACC </option></select
+          <option value="0" class="atk_sum">{{ $store.state.lang.atk }}+ </option
+          ><option value="0" class="hp_sum">{{ $store.state.lang.hp }}+ </option
+          ><option value="0" class="def_sum">{{ $store.state.lang.def }}+ </option
+          ><option value="0" class="cRate" disabled>{{ $store.state.lang.cRate }} </option
+          ><option value="0" class="cDmg" disabled>{{ $store.state.lang.cDmg }} </option
+          ><option value="0" class="atk_100">{{ $store.state.lang.atk }}% </option
+          ><option value="0" class="hp_100">{{ $store.state.lang.hp }}% </option
+          ><option value="0" class="def_100">{{ $store.state.lang.def }}% </option
+          ><option value="0" class="spd">{{ $store.state.lang.spd }} </option
+          ><option value="0" class="resist" disabled>{{ $store.state.lang.res }} </option
+          ><option value="0" class="acc" selected>{{ $store.state.lang.acc }} </option></select
         ><input type="number" />
       </div>
     </div>

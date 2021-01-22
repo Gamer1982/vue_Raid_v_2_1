@@ -15,10 +15,16 @@ export default new Vuex.Store({
     CHANGE_LANGUAGE_TO_STATE(state, item) {
       state.language = item;
     },
+    CHANGE_OPTIONS_TO_STATE(state, item) {
+      state.options = item;
+    },
   },
   actions: {
     GET_LANG_TO_STATE(state, lang) {
       sobmmit("CHANGE_LANG_TO_STATE", lang);
+    },
+    GET_OPTIONS_TO_STATE(state, option) {
+      sobmmit("CHANGE_LANG_TO_STATE", option);
     },
   },
 

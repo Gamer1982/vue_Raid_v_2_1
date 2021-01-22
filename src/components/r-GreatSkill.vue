@@ -1,49 +1,49 @@
 <template>
   <div class="wrapper">
     <div class="greatSkill">
-      <h2>Masteries</h2>
+      <h2>{{ $store.state.lang.masteries }}</h2>
       <div class="masteries1">
         <div class="masteries1_box">
           <div class="d16_1">
             <div>
               <select>
-                <option value="0">SKILL </option
-                ><option value="75" class="atk_sum">ATK 75 </option
-                ><option value="5" class="cRate">C.R 5% </option
-                ><option value="75" class="def_sum">DEF 75 </option
-                ><option value="10" class="resist">RES 10 </option></select
+                <option value="0">{{ $store.state.lang.skill }} </option
+                ><option value="75" class="atk_sum">{{ $store.state.lang.atk }} 75 </option
+                ><option value="5" class="cRate">{{ $store.state.lang.cRate }} 5% </option
+                ><option value="75" class="def_sum">{{ $store.state.lang.def }} 75 </option
+                ><option value="10" class="resist">{{ $store.state.lang.resMin }} 10 </option></select
               >
             </div>
             <div>
               <select>
-                <option value="0">SKILL </option
-                ><option value="75" class="def_sum">DEF 75 </option
-                ><option value="10" class="resist">RES 10 </option
+                <option value="0">{{ $store.state.lang.skill }} </option
+                ><option value="75" class="def_sum">{{ $store.state.lang.def }} 75 </option
+                ><option value="10" class="resist">{{ $store.state.lang.resMin }} 10 </option
                 ><option value="810" class="hp_sum">M.HP 810 </option
-                ><option value="10" class="acc">ACC 10 </option></select
+                ><option value="10" class="acc">{{ $store.state.lang.acc }} 10 </option></select
               >
             </div>
           </div>
           <div class="d16">
             <select>
-              <option value="0">SKILL </option
-              ><option value="10" class="cDmg">C.DMG 10% </option></select
+              <option value="0">{{ $store.state.lang.skill }} </option
+              ><option value="10" class="cDmg">{{ $store.state.lang.cDmg }} 10% </option></select
             >
           </div>
           <div class="d16">
             <select>
-              <option value="0">SKILL </option
+              <option value="0">{{ $store.state.lang.skill }} </option
               ><option value="0.15" class="set_">SET +15% </option></select
             >
           </div>
           <div class="d16">
             <select>
-              <option value="0">SKILL </option
-              ><option value="20" class="cDmg">C.DMG 20% </option
-              ><option value="200" class="def_sum">DEF 200 </option
-              ><option value="50" class="resist">RESIST 50 </option
+              <option value="0">{{ $store.state.lang.skill }} </option
+              ><option value="20" class="cDmg">{{ $store.state.lang.cDmg }} 20% </option
+              ><option value="200" class="def_sum">{{ $store.state.lang.def }} 200 </option
+              ><option value="50" class="resist">{{ $store.state.lang.res }} 50 </option
               ><option value="3000" class="hp_sum">M.HP 3000 </option
-              ><option value="50" class="acc">ACC 50 </option></select
+              ><option value="50" class="acc">{{ $store.state.lang.acc }} 50 </option></select
             >
           </div>
         </div>

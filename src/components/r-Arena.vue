@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="arena">
-      <h2>Arena</h2>
+      <h2>{{ $store.state.lang.arena }}</h2>
 
       <div class="box">
         <select name="HP">
