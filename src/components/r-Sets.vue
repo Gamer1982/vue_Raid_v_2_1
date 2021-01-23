@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper sets" @change="log">
     <select name="set" class="sett" v-model="$store.state.options[index]">
-      <option value="0" class="choose" disabled selected>{{ $store.state.lang.choose }}</option>
+      <option value="0" disabled class="choose">{{ $store.state.lang.choose }}</option>
       <option value="1" class="hp_100 life">{{ $store.state.lang.life }} </option>
       <option value="2" class="atk_100 offense">{{ $store.state.lang.offense }} </option>
       <option value="3" class="def_100 defense">{{ $store.state.lang.defense }} </option>
@@ -53,7 +53,7 @@ export default {
   name: "Sets",
   props: {
     index: {
-      type: String,
+      type: Number,
       default: "",
     },
   },

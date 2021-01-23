@@ -2,42 +2,42 @@
   <div class="wrapper">
     <div class="stats">
       <div class="start startHp">
-        <input type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+0</output><span>{{ $store.state.lang.hp }}-</span>
+        <input v-model="$store.state.options[109]" type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+0</output><span>{{ $store.state.lang.hp }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startAtk">
-        <input type="number" class="stats_input" placeholder="Start ATK" /><output class="stats_output">+0</output><span>{{ $store.state.lang.atk }}-</span>
+        <input v-model="$store.state.options[110]" type="number" class="stats_input" placeholder="Start ATK" /><output class="stats_output">+0</output><span>{{ $store.state.lang.atk }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startDef">
-        <input type="number" class="stats_input" placeholder="Start DEF" /><output class="stats_output">+0</output><span>{{ $store.state.lang.def }}-</span>
+        <input v-model="$store.state.options[111]" type="number" class="stats_input" placeholder="Start DEF" /><output class="stats_output">+0</output><span>{{ $store.state.lang.def }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startSpeed">
-        <input type="number" class="stats_input" placeholder="Start SPD" /><output class="stats_output">+0</output><span>{{ $store.state.lang.spd }}-</span>
+        <input v-model="$store.state.options[112]" type="number" class="stats_input" placeholder="Start SPD" /><output class="stats_output">+0</output><span>{{ $store.state.lang.spd }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startCrate">
-        <input type="number" class="stats_input" placeholder="Start C.Rate" /><output class="stats_output">+0%</output><span>C.R-</span>
+        <input v-model="$store.state.options[113]" type="number" class="stats_input" placeholder="Start C.Rate" /><output class="stats_output">+0%</output><span>{{ $store.state.lang.minCritRate }}-</span>
         <p>0%</p>
       </div>
 
       <div class="start startCdmg">
-        <input type="number" class="stats_input" placeholder="Start C.Dmg" /><output class="stats_output">+0%</output><span>C.D-</span>
+        <input v-model="$store.state.options[114]" type="number" class="stats_input" placeholder="Start C.Dmg" /><output class="stats_output">+0%</output><span>{{ $store.state.lang.minCritDamage }}-</span>
         <p>0%</p>
       </div>
 
       <div class="start startResist">
-        <input type="number" class="stats_input" placeholder="Start RES" /><output class="stats_output">+0</output><span>{{ $store.state.lang.resMin }}-</span>
+        <input v-model="$store.state.options[115]" type="number" class="stats_input" placeholder="Start RES" /><output class="stats_output">+0</output><span>{{ $store.state.lang.resMin }}-</span>
         <p>0</p>
       </div>
 
       <div class="start startAcc">
-        <input type="number" class="stats_input" placeholder="Start ACC" /><output class="stats_output">+0</output><span>{{ $store.state.lang.acc }}-</span>
+        <input v-model="$store.state.options[116]" type="number" class="stats_input" placeholder="Start ACC" /><output class="stats_output">+0</output><span>{{ $store.state.lang.acc }}-</span>
         <p>0</p>
       </div>
     </div>
@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
 .stats {
-  font-size: 4.5vh;
+  font-size: 5vh;
   display: flex;
   flex-wrap: wrap;
   height: 80%;

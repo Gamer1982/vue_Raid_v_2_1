@@ -6,7 +6,7 @@
 
         <div class="box">
           <p>{{ $store.state.lang.hp }}</p>
-          <select name="HP">
+          <select v-model="$store.state.options[97]" name="HP">
             <option value="0" class="hp_100">+0% </option
             ><option value="2" class="hp_100">+2% </option
             ><option value="3" class="hp_100">+3% </option
@@ -22,7 +22,7 @@
         </div>
         <div class="box">
           <p>{{ $store.state.lang.atk }}</p>
-          <select name="ATK">
+          <select v-model="$store.state.options[98]" name="ATK">
             <option value="0" class="atk_100">+0% </option
             ><option value="2" class="atk_100">+2% </option
             ><option value="3" class="atk_100">+3% </option
@@ -38,7 +38,7 @@
         </div>
         <div class="box">
           <p>{{ $store.state.lang.def }}</p>
-          <select name="DEF">
+          <select v-model="$store.state.options[99]" name="DEF">
             <option value="0" class="def_100">+0% </option
             ><option value="2" class="def_100">+2% </option
             ><option value="3" class="def_100">+3% </option
@@ -54,7 +54,7 @@
         </div>
         <div class="box">
           <p>{{ $store.state.lang.cDmg }}</p>
-          <select name="C.DMG">
+          <select v-model="$store.state.options[100]" name="C.DMG">
             <option value="0" class="cDmg">+0% </option
             ><option value="2" class="cDmg">+2% </option
             ><option value="4" class="cDmg">+4% </option
@@ -70,7 +70,7 @@
         </div>
         <div class="box">
           <p>{{ $store.state.lang.resMin }}</p>
-          <select name="RESIST">
+          <select v-model="$store.state.options[101]" name="RESIST">
             <option value="0" class="resist">+0 </option
             ><option value="5" class="resist">+5 </option
             ><option value="10" class="resist">+10 </option
@@ -86,7 +86,7 @@
         </div>
         <div class="box">
           <p>{{ $store.state.lang.acc }}</p>
-          <select name="ACC">
+          <select v-model="$store.state.options[102]" name="ACC">
             <option value="0" class="acc">+0 </option
             ><option value="5" class="acc">+5 </option
             ><option value="10" class="acc">+10 </option

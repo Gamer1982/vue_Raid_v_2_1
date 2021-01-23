@@ -32,7 +32,7 @@ body {
 h2 {
   min-width: 100%;
   color: orange;
-  font-size: 3vh;
+  font-size: 4vh;
   font-weight: 900;
 }
 p {
