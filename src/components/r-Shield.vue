@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="top top_shield">
+    <div class="top top_shield" :style="vStyle" @change="color">
       <div class="image shield9-1"></div>
       <div class="image2 shield9-1"></div>
       <Sets :index="index" />
@@ -51,6 +51,8 @@
 
 <script>
 import Sets from "./r-Sets";
+import borderColor from "../assets/js/color";
+import selectDisabled from "../assets/js/disabled";
 
 export default {
   name: "Shield",
@@ -68,21 +70,16 @@ export default {
       isCRate: false,
       isCDmg: false,
       isSpd: false,
+      isActive: true,
+      vStyle: "border: solid 0.1em gray",
     };
   },
   methods: {
     disab() {
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("acc") ? (this.isAcc = true) : (this.isAcc = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("atk_sum") ? (this.isAtk_sum = true) : (this.isAtk_sum = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("atk_100") ? (this.isAtk_100 = true) : (this.isAtk_100 = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("def_sum") ? (this.isDef_sum = true) : (this.isDef_sum = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("def_100") ? (this.isDef_100 = true) : (this.isDef_100 = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("hp_sum") ? (this.isHp_sum = true) : (this.isHp_sum = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("hp_100") ? (this.isHp_100 = true) : (this.isHp_100 = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("resist") ? (this.isResist = true) : (this.isResist = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("cRate") ? (this.isCRate = true) : (this.isCRate = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("cDmg") ? (this.isCDmg = true) : (this.isCDmg = false);
-      this.$store.state.options.slice(this.index + 1, this.index + 10).includes("spd") ? (this.isSpd = true) : (this.isSpd = false);
+      selectDisabled(this);
+    },
+    color() {
+      borderColor(this);
     },
   },
   components: { Sets },
