@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="top top_earing">
-      <div class="image earing-1"></div>
+    <div class="top top_earing" :class="{ active: isActive }">
+      <div class="image earing-1" @click="isActive = !isActive"></div>
       <div class="image2 earing-1"></div>
 
-      <div class="earing" @change="disab">
-        <select v-model="$store.state.options[76]" name="Earing">
+      <div class="earing" @input="disab">
+        <select class="atr" v-model="$store.state.options[76]" name="Earing">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -63,6 +63,7 @@ export default {
       isCRate: false,
       isCDmg: false,
       isSpd: false,
+      isActive: false,
     };
   },
   methods: {

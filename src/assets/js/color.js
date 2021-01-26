@@ -127,6 +127,6 @@ export default (t) => {
       t.vStyle = "border: #9BFEFF 0.15em dashed";
       break;
     default:
-      t.vStyle = "border: solid 0.1em red";
+      t.vStyle = "border: solid 0.1em gray";
   }
 };

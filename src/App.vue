@@ -56,10 +56,22 @@ select.wep {
   width: 50%;
   margin-left: 25%;
 }
+.top {
+  max-width: 16vw;
+}
 .top input {
   left: 55%;
   position: relative;
-  width: 35%;
+  width: 30%;
+}
+.atr {
+  margin-left: 20%;
+  margin-right: 30%;
+  width: 50%;
+}
+.atr + input {
+  margin-bottom: 1vh;
+  left: 50%;
 }
 .wep + input {
   margin-bottom: 1vh;
@@ -188,5 +200,19 @@ select {
   top: 0;
   right: 0;
   opacity: 1;
+}
+.active {
+  position: fixed;
+  transform: scale(1.9);
+  left: 42vw;
+  top: 25vh;
+  right: 30vw;
+  width: 16vw;
+  height: 30vh;
+  z-index: 11;
+  background: #162850;
+}
+.active option {
+  font-size: 180%;
 }
 </style>

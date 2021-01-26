@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="top top_boxing" :style="vStyle" @change="color">
-      <div class="image boxing-1"></div>
+    <div class="top top_boxing" :style="vStyle" :class="{ active: isActive }">
+      <div class="image boxing-1" @click="isActive = !isActive"></div>
       <div class="image2 boxing-1"></div>
-      <Sets :index="index" />
+      <Sets :index="index" @set-color="color" />
 
-      <div class="baza boxing" @change="disab">
+      <div class="baza boxing" @input="disab">
         <select v-model="$store.state.options[34]" name="Boxing" class="wep">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
@@ -90,7 +90,7 @@ export default {
       isCRate: false,
       isCDmg: false,
       isSpd: false,
-      isActive: true,
+      isActive: false,
       vStyle: "border: solid 0.1em gray",
     };
   },

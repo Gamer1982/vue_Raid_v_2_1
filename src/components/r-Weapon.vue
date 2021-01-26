@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="top top_weapon" :style="vStyle" @change="color">
-      <div class="image weapon-1" v-bind:class="{ active: isActive }"></div>
-      <div class="image2 weapon-1" v-bind:class="{ active: !isActive }"></div>
-      <Sets :index="index" />
+    <div class="top top_weapon" :style="vStyle" :class="{ active: isActive }">
+      <div class="image weapon-1" @click="isActive = !isActive"></div>
+      <div class="image2 weapon-1"></div>
+      <Sets :index="index" @set-color="color" />
 
-      <div class="baza weapon" @change="disab">
+      <div class="baza weapon" @input="disab">
         <select v-model="$store.state.options[1]" name="Weapon" class="wep">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+</option> </select
         ><input v-model="$store.state.options[2]" type="number" /><select v-model="$store.state.options[3]" name="Weapon1">
@@ -71,7 +71,7 @@ export default {
       isCRate: false,
       isCDmg: false,
       isSpd: false,
-      isActive: true,
+      isActive: false,
       vStyle: "border: solid 0.1em gray",
     };
   },
@@ -83,6 +83,9 @@ export default {
     color() {
       borderColor(this);
     },
+    changeDisp() {
+      console.log(69, this.isActive);
+    },
   },
 };
 </script>
@@ -90,8 +93,5 @@ export default {
 <style lang="scss">
 .top_weapon {
   border: solid 0.2em gray;
-}
-.active {
-  border: solid 0.2em rgb(6, 245, 18);
 }
 </style>

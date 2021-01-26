@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="top top_helmet" :style="vStyle" @change="color">
-      <div class="image helmet-1"></div>
+    <div class="top top_helmet" :style="vStyle" :class="{ active: isActive }">
+      <div class="image helmet-1" @click="isActive = !isActive"></div>
       <div class="image2 helmet-1"></div>
-      <Sets :index="index" />
+      <Sets :index="index" @set-color="color" />
 
-      <div class="baza helmet" @change="disab">
+      <div class="baza helmet" @input="disab">
         <select v-model="$store.state.options[12]" name="Helmet" class="wep">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option></select
         ><input v-model="$store.state.options[13]" type="number" /><select v-model="$store.state.options[14]" name="Helmet1">
@@ -79,7 +79,7 @@ export default {
       isCRate: false,
       isCDmg: false,
       isSpd: false,
-      isActive: true,
+      isActive: false,
       vStyle: "border: solid 0.1em gray",
     };
   },

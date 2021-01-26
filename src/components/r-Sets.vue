@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper sets" @change="log">
+  <div class="wrapper sets" @input="color">
     <select name="set" class="sett" v-model="$store.state.options[index]">
       <option value="0" disabled class="choose">{{ $store.state.lang.choose }}</option>
       <option value="1" class="hp_100 life">{{ $store.state.lang.life }} </option>
@@ -61,8 +61,8 @@ export default {
     return {};
   },
   methods: {
-    log() {
-      console.log(this.$store.state.options);
+    color() {
+      this.$emit("set-color");
     },
   },
 };
