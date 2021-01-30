@@ -5,7 +5,7 @@
       <div class="image2 armor-1"></div>
       <Sets :index="index" @set-color="color" />
 
-      <div class="baza armor" @input="disab">
+      <div class="baza armor" @change="disab">
         <select v-model="$store.state.options[45]" name="Armor" class="wep">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option

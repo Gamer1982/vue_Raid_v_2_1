@@ -4,7 +4,7 @@
       <div class="image shield9-1" @click="isActive = !isActive"></div>
       <div class="image2 shield9-1"></div>
       <Sets :index="index" @set-color="color" />
-      <div class="baza shield9" @input="disab">
+      <div class="baza shield9" @change="disab">
         <select v-model="$store.state.options[23]" name="Shield" class="wep">
           <option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+</option> </select
         ><input v-model="$store.state.options[24]" type="number" /><select v-model="$store.state.options[25]" name="Shield1">

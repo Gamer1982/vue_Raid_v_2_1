@@ -4,7 +4,7 @@
       <h2>{{ $store.state.lang.arena }}</h2>
 
       <div class="box">
-        <select v-model="$store.state.options[103]" name="HP">
+        <select v-model="$store.state.options[103]">
           <option value="1" class="hp_100 def_100 atk_100">+1% </option
           ><option value="2" class="hp_100 def_100 atk_100">+2% </option
           ><option value="3" class="hp_100 def_100 atk_100">+3% </option

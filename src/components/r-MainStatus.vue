@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="stats" @input="mainCalc">
+    <div class="stats">
       <div class="start startHp">
         <input v-model="$store.state.options[109]" type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+{{ bonusHp }}</output
         ><span>{{ $store.state.lang.hp }}-</span>
@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "MainStatus",
   data() {
@@ -65,22 +67,73 @@ export default {
       bonusAcc: 0,
     };
   },
-  methods: {
-    mainCalc() {
+  computed: {
+    ...mapState(["options"]),
+  },
+  watch: {
+    options() {
       let options = this.$store.state.options;
-      let hp_sum = options.filter((item, i, arr) => arr[i - 1] === "hp_sum").reduce((a, b) => +a + +b);
-      let hp_100 = options.filter((item, i, arr) => arr[i - 1] === "hp_100").reduce((a, b) => +a + +b);
-      let atk_sum = options.filter((item, i, arr) => arr[i - 1] === "atk_sum").reduce((a, b) => +a + +b);
-      let atk_100 = options.filter((item, i, arr) => arr[i - 1] === "atk_100").reduce((a, b) => +a + +b);
-      let def_sum = options.filter((item, i, arr) => arr[i - 1] === "def_sum").reduce((a, b) => +a + +b);
-      let spd = options.filter((item, i, arr) => arr[i - 1] === "spd").reduce((a, b) => +a + +b);
-      let cRate = options.filter((item, i, arr) => arr[i - 1] === "cRate").reduce((a, b) => +a + +b);
-      let cDmg = options.filter((item, i, arr) => arr[i - 1] === "cDmg").reduce((a, b) => +a + +b);
-      let resist = options.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b);
-      let acc = options.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b);
-      let set = options[107] === "1.15" ? 1.15 : 1;
 
-      console.log(hp_sum, set, acc);
+      let set = [options[0], options[11], options[22], options[33], options[44], options[55]]
+        .sort()
+        .filter((str) => str.length > 10)
+        .filter((item, i, arr) => item === arr[i - 1] || item === arr[i + 1]);
+
+      //========================================Количество одинаковых элементов в массиве set
+      function count(str) {
+        let names = {};
+        set.forEach((item) => {
+          names[item] = (names[item] || 0) + 1;
+        });
+        return names[str];
+      }
+      //========================================Массив с "0"-ми,для исключения ошибок при расчетах
+      let resultSet = ["hp_100", "0", "atk_100", "0", "def_100", "0", "spd_100", "0", "cRate", "0", "cDmg", "0", "resist", "0", "acc", "0"];
+      //========================================Добавляем только полные сеты
+      for (let i = 0; i < set.length; i += count(set[i])) {
+        switch (Math.floor(count(set[i]) / set[i][3])) {
+          case 1:
+            resultSet.push(set[i].slice(6));
+            break;
+          case 2:
+            resultSet.push(set[i].slice(6));
+            resultSet.push(set[i].slice(6));
+            break;
+          case 3:
+            resultSet.push(set[i].slice(6));
+            resultSet.push(set[i].slice(6));
+            resultSet.push(set[i].slice(6));
+            break;
+        }
+      }
+      //==================================Преобразуем в нужную форму
+      resultSet = resultSet.join().split(",");
+      //==================================Расчеты
+
+      let bonusSet = options[107] === "1.15" ? 1.15 : 1;
+      let hp_sum = options.filter((item, i, arr) => arr[i - 1] === "hp_sum").reduce((a, b) => +a + +b) + (options[105] === "3" ? 810 : 0) + (options[108] === "4" ? 3000 : 0);
+      let hp_100 = options.filter((item, i, arr) => arr[i - 1] === "hp_100").reduce((a, b) => +a + +b) + +options[97] + +options[103] + resultSet.filter((item, i, arr) => arr[i - 1] === "hp_100").reduce((a, b) => +a + +b) * bonusSet;
+      let atk_sum = options.filter((item, i, arr) => arr[i - 1] === "atk_sum").reduce((a, b) => +a + +b) + (options[104] === "1" ? 75 : 0);
+      let atk_100 = options.filter((item, i, arr) => arr[i - 1] === "atk_100").reduce((a, b) => +a + +b) + +options[98] + +options[103] + resultSet.filter((item, i, arr) => arr[i - 1] === "atk_100").reduce((a, b) => +a + +b) * bonusSet;
+      let def_sum = options.filter((item, i, arr) => arr[i - 1] === "def_sum").reduce((a, b) => +a + +b) + (options[104] === "3" ? 75 : 0) + (options[105] === "1" ? 75 : 0) + (options[108] === "2" ? 200 : 0);
+      let def_100 = options.filter((item, i, arr) => arr[i - 1] === "def_100").reduce((a, b) => +a + +b) + +options[99] + +options[103] + resultSet.filter((item, i, arr) => arr[i - 1] === "def_100").reduce((a, b) => +a + +b) * bonusSet;
+      let spd = options.filter((item, i, arr) => arr[i - 1] === "spd").reduce((a, b) => +a + +b);
+      let spd_100 = resultSet.filter((item, i, arr) => arr[i - 1] === "spd_100").reduce((a, b) => +a + +b) * bonusSet;
+      let cRate = options.filter((item, i, arr) => arr[i - 1] === "cRate").reduce((a, b) => +a + +b) + (options[104] === "2" ? 5 : 0) + resultSet.filter((item, i, arr) => arr[i - 1] === "cRate").reduce((a, b) => +a + +b) * bonusSet;
+      let cDmg = options.filter((item, i, arr) => arr[i - 1] === "cDmg").reduce((a, b) => +a + +b) + (options[106] === "1" ? 10 : 0) + (options[108] === "1" ? 20 : 0) + +options[100] + resultSet.filter((item, i, arr) => arr[i - 1] === "cDmg").reduce((a, b) => +a + +b) * bonusSet;
+      let resist = options.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) + (options[104] === "4" ? 10 : 0) + (options[105] === "2" ? 10 : 0) + (options[108] === "3" ? 50 : 0) + +options[101] + resultSet.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) * bonusSet;
+      let acc = options.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) + (options[105] === "4" ? 10 : 0) + (options[108] === "5" ? 50 : 0) + +options[102] + resultSet.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) * bonusSet;
+      //=========================================Присваиваем в DOM
+      this.bonusHp = hp_sum + (hp_100 * options[109]) / 100;
+      this.bonusAtk = atk_sum + (atk_100 * options[110]) / 100;
+      this.bonusDef = def_sum + (def_100 * options[111]) / 100;
+      this.bonusSpd = spd + (spd_100 * options[112]) / 100;
+      this.bonusCrate = cRate;
+      this.bonusCdmg = cDmg;
+      this.bonusResist = resist;
+      this.bonusAcc = acc;
+
+      //console.log(resultSet, bonusSet, "hp_sum = ", hp_sum, "hp_100", hp_100, "atk_sum=", atk_sum, "atk_100", atk_100, "def_sum", def_sum, "def_100", def_100, "spd", spd, "cRate", cRate, "cDmg", cDmg, "resist", resist, "acc", acc, "set");
     },
   },
 };

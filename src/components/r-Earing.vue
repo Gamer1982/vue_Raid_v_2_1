@@ -4,7 +4,7 @@
       <div class="image earing-1" @click="isActive = !isActive"></div>
       <div class="image2 earing-1"></div>
 
-      <div class="earing" @input="disab">
+      <div class="earing" @change="disab">
         <select class="atr" v-model="$store.state.options[76]" name="Earing">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
