@@ -36,7 +36,7 @@
       <option value="32(2) atk_100,15" class="atk_100 divineOffense">{{ $store.state.lang.divineOffense }} </option>
       <option value="33(2) cRate,12" class="cRate divineCriticalRate">{{ $store.state.lang.divineCriticalRate }} </option>
       <option value="34(2) spd_100,12" class="spd divineSpeed">{{ $store.state.lang.divineSpeed }} </option>
-      <option value="35(4) cDmg,30,spd,18" class="cDmg spd swiftParry">{{ $store.state.lang.swiftParry }} </option>
+      <option value="35(4) cDmg,30,spd_100,18" class="cDmg spd swiftParry">{{ $store.state.lang.swiftParry }} </option>
       <option value="36(4) hp_100,20,def_100,20" class="hp_100 def_100 deflection">{{ $store.state.lang.deflection }} </option>
       <option value="37(2) hp_100,10,def_100,10" class="hp_100 def_100 resilience">{{ $store.state.lang.resilience }}</option>
       <option value="38(2) acc,40,spd_100,5" class="acc spd perception">{{ $store.state.lang.perception }} </option>
@@ -60,9 +60,9 @@ export default {
   data() {
     return {};
   },
+
   methods: {
     color() {
-      console.log("color", this);
       this.$emit("set-color");
     },
   },

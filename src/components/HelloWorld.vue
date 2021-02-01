@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="lang">
-      <input placeholder="For screenshot" v-model="title" @change="changeTitle" />
+      <input placeholder="For screenshot" v-model="title" @input="changeTitle" />
       <input type="button" value="save" @click="saveTitle" />
       <input type="button" value="reset" @click="allReset" />
       <select name="langg" class="langg" v-model="selectedLanguage" @change="changeLanguage">
@@ -57,11 +57,20 @@ export default {
 
     changeTitle() {
       //Замена Имени в локальном хранилище для сохранения option при перезагрузке
+      let titleArray = JSON.parse(localStorage.getItem(`${this.title.toUpperCase()}`));
+
+      if (titleArray) {
+        console.log("Ok", titleArray);
+        this.$store.commit("CHANGE_OPTIONS_TO_STATE", titleArray);
+      } else {
+        console.log("No((((");
+      }
+
       localStorage.setItem("title", this.title.toUpperCase());
     },
     saveTitle() {
       //Сохранение в локальном хранилище нового набора option с использованием Title(Имени)
-      localStorage.setItem(`${this.title.toUpperCase()}`, this.$store.state.options);
+      localStorage.setItem(`${this.title.toUpperCase()}`, JSON.stringify(this.$store.state.options));
     },
     allReset() {
       //Сброс option for 0

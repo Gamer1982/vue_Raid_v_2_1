@@ -101,6 +101,7 @@ export default {
       borderColor(this);
     },
   },
+
   components: { Sets },
 };
 </script>

@@ -67,6 +67,7 @@ export default {
       bonusAcc: 0,
     };
   },
+  //============================
   computed: {
     ...mapState(["options"]),
   },
