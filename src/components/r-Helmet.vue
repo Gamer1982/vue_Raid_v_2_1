@@ -83,6 +83,7 @@ export default {
       vStyle: "border: solid 0.1em gray",
     };
   },
+
   methods: {
     disab() {
       selectDisabled(this);

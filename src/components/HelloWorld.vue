@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
     <div class="lang">
-      <input placeholder="For screenshot" v-model="title" @input="changeTitle" />
+      <input list="title" placeholder="For screenshot" v-model="title" @input="changeTitle" />
+      <datalist id="title">
+        <option v-for="(title, i) in local" :key="i" :value="title"></option>
+      </datalist>
+
       <input type="button" value="save" @click="saveTitle" />
       <input type="button" value="reset" @click="allReset" />
       <select name="langg" class="langg" v-model="selectedLanguage" @change="changeLanguage">
@@ -44,7 +48,8 @@ export default {
     return {
       title: localStorage.getItem("title") || "",
       selectedLanguage: localStorage.getItem("language") || "en", //Выбор языка
-      lan: {},
+      pro: false,
+      storage: [],
     };
   },
   methods: {
@@ -71,12 +76,13 @@ export default {
     saveTitle() {
       //Сохранение в локальном хранилище нового набора option с использованием Title(Имени)
       localStorage.setItem(`${this.title.toUpperCase()}`, JSON.stringify(this.$store.state.options));
+      this.storage.push(`${this.title.toUpperCase()}`);
     },
     allReset() {
       //Сброс option for 0
       this.title = "";
       this.$store.commit("CHANGE_OPTIONS_TO_STATE", [
-        0,
+        "00",
         "atk_sum",
         ,
         0,
@@ -87,7 +93,7 @@ export default {
         ,
         0,
         ,
-        0,
+        "00",
         "hp_sum",
         ,
         0,
@@ -98,7 +104,7 @@ export default {
         ,
         0,
         ,
-        0,
+        "00",
         "def_sum",
         ,
         0,
@@ -109,18 +115,7 @@ export default {
         ,
         0,
         ,
-        0,
-        0,
-        ,
-        0,
-        ,
-        0,
-        ,
-        0,
-        ,
-        0,
-        ,
-        0,
+        "00",
         0,
         ,
         0,
@@ -131,7 +126,18 @@ export default {
         ,
         0,
         ,
+        "00",
         0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "0",
         0,
         ,
         0,
@@ -236,7 +242,7 @@ export default {
   mounted() {
     this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selectedLanguage]);
     this.$store.commit("CHANGE_OPTIONS_TO_STATE", [
-      0,
+      "00",
       "atk_sum",
       ,
       0,
@@ -247,7 +253,7 @@ export default {
       ,
       0,
       ,
-      0,
+      "00",
       "hp_sum",
       ,
       0,
@@ -258,7 +264,7 @@ export default {
       ,
       0,
       ,
-      0,
+      "00",
       "def_sum",
       ,
       0,
@@ -269,18 +275,7 @@ export default {
       ,
       0,
       ,
-      0,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
+      "00",
       0,
       ,
       0,
@@ -291,7 +286,18 @@ export default {
       ,
       0,
       ,
+      "00",
       0,
+      ,
+      0,
+      ,
+      0,
+      ,
+      0,
+      ,
+      0,
+      ,
+      "00",
       0,
       ,
       0,
@@ -390,6 +396,12 @@ export default {
       "hp_sum",
       0,
     ]);
+  },
+  computed: {
+    local() {
+      this.storage = Object.keys(localStorage).filter((item) => item !== item.toLowerCase());
+      return this.storage;
+    },
   },
 };
 </script>

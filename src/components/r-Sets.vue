@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper sets" @change="color">
     <select name="set" class="sett" v-model="$store.state.options[index]">
-      <option value="0" disabled class="choose">{{ $store.state.lang.choose }}</option>
+      <option value="00" disabled class="choose">{{ $store.state.lang.choose }}</option>
       <option value="01(2) hp_100,15" class="hp_100 life">{{ $store.state.lang.life }} </option>
       <option value="02(2) atk_100,15" class="atk_100 offense">{{ $store.state.lang.offense }} </option>
       <option value="03(2) def_100,15" class="def_100 defense">{{ $store.state.lang.defense }} </option>
@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Sets",
   props: {
@@ -60,11 +62,29 @@ export default {
   data() {
     return {};
   },
-
   methods: {
     color() {
       this.$emit("set-color");
     },
+  },
+
+  computed: {
+    ...mapState(["options"]),
+  },
+  // watch: {
+  //   options() {
+  //     this.$emit("set-color");
+  //   },
+  // },
+  mounted() {
+    this.$store.subscribe((mutation, state) => {
+      switch (mutation.type) {
+        case "CHANGE_OPTIONS_TO_STATE":
+          this.$emit("set-color");
+          console.log("subscribe");
+          break;
+      }
+    });
   },
 };
 </script>

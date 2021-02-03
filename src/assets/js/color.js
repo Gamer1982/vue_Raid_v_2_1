@@ -1,5 +1,7 @@
 export default (t) => {
-  switch (t.$store.state.options[t.index].slice(0, 2)) {
+  console.log(t.$store.state.options[t.index]);
+  let res = t.$store.state.options[t.index].slice(0, 2);
+  switch (res) {
     case "01":
       t.vStyle = "border: #95c11f 0.1em solid";
       break;
@@ -125,6 +127,9 @@ export default (t) => {
       break;
     case "42":
       t.vStyle = "border: #9BFEFF 0.15em dashed";
+      break;
+    case "00":
+      t.vStyle = "border: solid 0.1em gray";
       break;
     default:
       t.vStyle = "border: solid 0.1em gray";
