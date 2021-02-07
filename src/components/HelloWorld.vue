@@ -48,16 +48,16 @@ export default {
     return {
       title: localStorage.getItem("title") || "",
       selectedLanguage: localStorage.getItem("language") || "en", //Выбор языка
-      pro: false,
-      storage: [],
+      pro: false, //    Платная/бесплатная версии
+      storage: [], //Пародия реактивности для LocalStorage - контролировать самому
     };
   },
   methods: {
     changeLanguage() {
       //Замена языка в локальном хранилище и Store для сохранения языка при перезагрузке
-      console.log(this, lang[this.selectedLanguage]);
       localStorage.setItem("language", this.selectedLanguage);
       this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selectedLanguage]);
+      console.log(this.title);
     },
 
     changeTitle() {
@@ -65,18 +65,19 @@ export default {
       let titleArray = JSON.parse(localStorage.getItem(`${this.title.toUpperCase()}`));
 
       if (titleArray) {
-        console.log("Ok", titleArray);
         this.$store.commit("CHANGE_OPTIONS_TO_STATE", titleArray);
-      } else {
-        console.log("No((((");
       }
 
       localStorage.setItem("title", this.title.toUpperCase());
     },
     saveTitle() {
       //Сохранение в локальном хранилище нового набора option с использованием Title(Имени)
-      localStorage.setItem(`${this.title.toUpperCase()}`, JSON.stringify(this.$store.state.options));
-      this.storage.push(`${this.title.toUpperCase()}`);
+      if (this.title !== "" && this.title !== "ADD NAME") {
+        localStorage.setItem(`${this.title.toUpperCase()}`, JSON.stringify(this.$store.state.options));
+        this.storage.push(`${this.title.toUpperCase()}`);
+      } else {
+        this.title = "ADD NAME";
+      }
     },
     allReset() {
       //Сброс option for 0
@@ -241,161 +242,164 @@ export default {
   },
   mounted() {
     this.$store.commit("CHANGE_LANG_TO_STATE", lang[this.selectedLanguage]);
-    this.$store.commit("CHANGE_OPTIONS_TO_STATE", [
-      "00",
-      "atk_sum",
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      "00",
-      "hp_sum",
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      "00",
-      "def_sum",
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      "00",
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      "00",
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      "00",
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      ,
-      0,
-      0,
-      ,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      "acc",
-      0,
-      "resist",
-      0,
-      "cDmg",
-      0,
-      "cRate",
-      0,
-      "spd",
-      0,
-      "def_100",
-      0,
-      "atk_100",
-      0,
-      "hp_100",
-      0,
-      "def_sum",
-      0,
-      "atk_sum",
-      0,
-      "hp_sum",
-      0,
-    ]);
+    this.$store.commit(
+      "CHANGE_OPTIONS_TO_STATE",
+      JSON.parse(localStorage.getItem(`${this.title.toUpperCase()}`)) || [
+        "00",
+        "atk_sum",
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "00",
+        "hp_sum",
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "00",
+        "def_sum",
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "00",
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "00",
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        "00",
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        ,
+        0,
+        0,
+        ,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "acc",
+        0,
+        "resist",
+        0,
+        "cDmg",
+        0,
+        "cRate",
+        0,
+        "spd",
+        0,
+        "def_100",
+        0,
+        "atk_100",
+        0,
+        "hp_100",
+        0,
+        "def_sum",
+        0,
+        "atk_sum",
+        0,
+        "hp_sum",
+        0,
+      ]
+    );
   },
   computed: {
     local() {
@@ -418,40 +422,40 @@ export default {
   opacity: 1;
   &__a1 {
     position: absolute;
-    top: 1%;
-    left: 1%;
-    right: 83%;
+    top: 0%;
+    left: 0%;
+    right: 86%;
     bottom: 10%;
     // border: 1px solid red;
   }
   &__a2 {
     position: absolute;
-    top: 1%;
-    left: 83%;
-    right: 1%;
+    top: 0%;
+    left: 86%;
+    right: 0%;
     bottom: 10%;
     // border: 1px solid red;
   }
   &__a3 {
     position: absolute;
     left: 20%;
-    right: 32%;
-    bottom: 2%;
+    right: 36%;
+    bottom: 1%;
     // border: 1px solid red;
   }
   &__b1 {
     position: absolute;
-    top: 1%;
-    left: 18%;
-    right: 19%;
+    top: 0%;
+    left: 16%;
+    right: 17%;
     bottom: 90%;
     //border: 1px solid red;
   }
   &__mainStatus {
     position: absolute;
     top: 15%;
-    left: 19%;
-    right: 17%;
+    left: 17%;
+    right: 15%;
     bottom: 32%;
     //border: 1px solid red;
   }

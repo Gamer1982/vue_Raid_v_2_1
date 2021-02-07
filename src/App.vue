@@ -204,10 +204,10 @@ select {
 .active {
   position: fixed;
   transform: scale(1.9);
-  left: 42vw;
+  left: 44vw;
   top: 25vh;
-  right: 30vw;
-  width: 16vw;
+  //right: 34vw;
+  width: 14vw;
   height: 30vh;
   z-index: 11;
   background: #162850;
