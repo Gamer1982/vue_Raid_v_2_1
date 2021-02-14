@@ -121,7 +121,7 @@ export default {
 }
 
 .hall .box {
-  max-width: 15%;
+  width: 14%;
   margin: 0.5%;
   select {
     width: 95%;

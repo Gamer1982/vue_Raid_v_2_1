@@ -1,27 +1,33 @@
 <template>
   <div class="hello">
     <div class="lang">
-      <input list="title" placeholder="For screenshot" v-model="title" @input="changeTitle" />
-      <datalist id="title">
-        <option v-for="(title, i) in local" :key="i" :value="title"></option>
-      </datalist>
+      <div class="lang__wrap">
+        <div class="lang__input">
+          <input list="title" placeholder="For screenshot" v-model="title" @input="changeTitle" />
+          <datalist id="title">
+            <option v-for="(title, i) in local" :key="i" :value="title"></option>
+          </datalist>
 
-      <input type="button" :value="save" :style="saveStile" @click="saveTitle" />
-      <input type="button" value="reset" :style="resetStile" @click="allReset" />
-      <select name="langg" class="langg" v-model="selectedLanguage" @change="changeLanguage">
-        <option value="en">en </option
-        ><option value="ru">ru </option
-        ><option value="fr">fr </option
-        ><option value="du">de </option
-        ><option value="it">it </option
-        ><option value="es">es </option
-        ><option value="pt">pt </option
-        ><option value="ko">ko </option
-        ><option value="zh">zh </option
-        ><option value="ja">ja </option
-        ><option value="tr">tr </option
-        ><option value="uk">uk </option>
-      </select>
+          <input type="button" :value="save" :style="saveStile" @click="saveTitle" />
+          <input type="button" value="RESET" :style="resetStile" @click="allReset" />
+        </div>
+        <div class="lang__select">
+          <select name="langg" class="langg" v-model="selectedLanguage" @change="changeLanguage">
+            <option value="en">en </option
+            ><option value="ru">ru </option
+            ><option value="fr">fr </option
+            ><option value="du">de </option
+            ><option value="it">it </option
+            ><option value="es">es </option
+            ><option value="pt">pt </option
+            ><option value="ko">ko </option
+            ><option value="zh">zh </option
+            ><option value="ja">ja </option
+            ><option value="tr">tr </option
+            ><option value="uk">uk </option>
+          </select>
+        </div>
+      </div>
     </div>
     <A1 class="hello__a1" />
     <B1 class="hello__b1" />
@@ -78,6 +84,7 @@ export default {
 
       localStorage.setItem("title", this.title.toUpperCase());
     },
+
     saveTitle() {
       //Сохранение/Удаление в локальном хранилище нового набора option с использованием Title(Имени)
       if (this.title.slice(-4).toUpperCase() === " DEL" && this.saveStile === "background-color: red") {
@@ -85,6 +92,7 @@ export default {
         this.save = "SAVE";
         localStorage.removeItem(this.title.slice(0, -4));
         this.title = "";
+        localStorage.setItem("title", this.title.toUpperCase());
       } else if (this.title.slice(-4).toUpperCase() === " DEL") {
         this.saveStile = "background-color: red";
       } else if (this.title !== "" && this.title !== "ADD NAME" && this.saveStile === "background-color: ghostwhite") {
@@ -97,6 +105,7 @@ export default {
         this.title = "ADD NAME";
       }
     },
+
     allReset() {
       //Сброс option for 0
       if (this.resetStile === "background-color: ghostwhite") {
@@ -425,6 +434,7 @@ export default {
       ]
     );
   },
+
   computed: {
     local() {
       this.storage = Object.keys(localStorage).filter((item) => item !== item.toLowerCase());
@@ -480,22 +490,45 @@ export default {
     top: 15%;
     left: 17%;
     right: 15%;
-    bottom: 32%;
+    bottom: 38%;
     //border: 1px solid red;
   }
 }
 .lang {
   position: absolute;
-  display: flex;
-  right: 3%;
-  bottom: 2%;
+  right: 1%;
+  left: 65%;
+  bottom: 1%;
+  top: 96%;
+  text-transform: uppercase;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .lang__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 27vw;
+    :first-child {
+      width: 65%;
+    }
+    input {
+      text-transform: uppercase;
+    }
+  }
+  .lang__select {
+    select {
+      padding-right: 0 2vw 0 1vw;
+      text-transform: uppercase;
+      width: 4vw;
+    }
+  }
+
   // border: 1px solid red;
-  select {
-    width: auto;
-    text-transform: uppercase;
-  }
-  input {
-    text-transform: uppercase;
-  }
 }
 </style>

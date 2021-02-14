@@ -81,6 +81,7 @@ export default {
   select {
     width: 98%;
     border-radius: 40%;
+    margin-bottom: 1vh;
   }
 }
 </style>

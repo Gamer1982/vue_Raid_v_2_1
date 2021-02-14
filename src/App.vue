@@ -32,7 +32,7 @@ body {
 h2 {
   min-width: 100%;
   color: orange;
-  font-size: 4vh;
+  font-size: 160%;
   font-weight: 900;
 }
 p {
@@ -50,7 +50,6 @@ select {
 }
 select.sett {
   width: 57%;
-  margin-left: 10%;
 }
 select.wep {
   width: 50%;
@@ -86,19 +85,19 @@ output {
 span {
   display: inline-block;
   color: rgb(255, 208, 0);
-  margin-left: 35%;
+  // margin-left: 32%;
 }
 option,
 select {
   margin: 0;
-  padding: 0;
+  padding: 0 10%;
   width: 65%;
   margin-left: 10%;
   font-weight: 900;
 }
 select {
   padding-right: 3vh;
-  background-image: url(http://s1.iconbird.com/ico/2013/8/426/w32h321377581133134TriangleDown.png);
+  background-image: url(./assets/images/corner.png);
   background-size: 2vh;
   background-repeat: no-repeat;
   background-position-y: bottom;

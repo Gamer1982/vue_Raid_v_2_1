@@ -2,49 +2,83 @@
   <div class="wrapper">
     <div class="stats">
       <div class="start startHp">
-        <input v-model="$store.state.options[109]" type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+{{ bonusHp }}</output
-        ><span>{{ $store.state.lang.hp }}-</span>
-        <p>{{ +$store.state.options[109] + +bonusHp }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[109]" type="number" class="stats_input startHp_input" placeholder="Start HP" /><output class="stats_output startHp_output">+{{ bonusHp }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.hp }}-</span>
+          <p>{{ +$store.state.options[109] + +bonusHp }}</p>
+        </div>
       </div>
 
       <div class="start startAtk">
-        <input v-model="$store.state.options[110]" type="number" class="stats_input" placeholder="Start ATK" /><output class="stats_output">+{{ bonusAtk }}</output
-        ><span>{{ $store.state.lang.atk }}-</span>
-        <p>{{ +$store.state.options[110] + +bonusAtk }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[110]" type="number" class="stats_input" placeholder="Start ATK" /><output class="stats_output">+{{ bonusAtk }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.atk }}-</span>
+          <p>{{ +$store.state.options[110] + +bonusAtk }}</p>
+        </div>
       </div>
 
       <div class="start startDef">
-        <input v-model="$store.state.options[111]" type="number" class="stats_input" placeholder="Start DEF" /><output class="stats_output">+{{ bonusDef }}</output
-        ><span>{{ $store.state.lang.def }}-</span>
-        <p>{{ +$store.state.options[111] + +bonusDef }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[111]" type="number" class="stats_input" placeholder="Start DEF" /><output class="stats_output">+{{ bonusDef }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.def }}-</span>
+          <p>{{ +$store.state.options[111] + +bonusDef }}</p>
+        </div>
       </div>
 
       <div class="start startSpeed">
-        <input v-model="$store.state.options[112]" type="number" class="stats_input" placeholder="Start SPD" /><output class="stats_output">+{{ bonusSpd }}</output
-        ><span>{{ $store.state.lang.spd }}-</span>
-        <p>{{ +$store.state.options[112] + +bonusSpd }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[112]" type="number" class="stats_input" placeholder="Start SPD" /><output class="stats_output">+{{ bonusSpd }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.spd }}-</span>
+          <p>{{ +$store.state.options[112] + +bonusSpd }}</p>
+        </div>
       </div>
 
       <div class="start startCrate">
-        <input v-model="$store.state.options[113]" type="number" class="stats_input" placeholder="Start C.Rate" /><output class="stats_output">+{{ bonusCrate }}%</output><span>{{ $store.state.lang.minCritRate }}-</span>
-        <p>{{ +$store.state.options[113] + +bonusCrate }}%</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[113]" type="number" class="stats_input" placeholder="Start C.Rate" /><output class="stats_output">+{{ bonusCrate }}%</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.minCritRate }}-</span>
+          <p>{{ +$store.state.options[113] + +bonusCrate }}%</p>
+        </div>
       </div>
 
       <div class="start startCdmg">
-        <input v-model="$store.state.options[114]" type="number" class="stats_input" placeholder="Start C.Dmg" /><output class="stats_output">+{{ bonusCdmg }}%</output><span>{{ $store.state.lang.minCritDamage }}-</span>
-        <p>{{ +$store.state.options[114] + +bonusCdmg }}%</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[114]" type="number" class="stats_input" placeholder="Start C.Dmg" /><output class="stats_output">+{{ bonusCdmg }}%</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.minCritDamage }}-</span>
+          <p>{{ +$store.state.options[114] + +bonusCdmg }}%</p>
+        </div>
       </div>
 
       <div class="start startResist">
-        <input v-model="$store.state.options[115]" type="number" class="stats_input" placeholder="Start RES" /><output class="stats_output">+{{ bonusResist }}</output
-        ><span>{{ $store.state.lang.resMin }}-</span>
-        <p>{{ +$store.state.options[115] + +bonusResist }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[115]" type="number" class="stats_input" placeholder="Start RES" /><output class="stats_output">+{{ bonusResist }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.resMin }}-</span>
+          <p>{{ +$store.state.options[115] + +bonusResist }}</p>
+        </div>
       </div>
 
       <div class="start startAcc">
-        <input v-model="$store.state.options[116]" type="number" class="stats_input" placeholder="Start ACC" /><output class="stats_output">+{{ bonusAcc }}</output
-        ><span>{{ $store.state.lang.acc }}-</span>
-        <p>{{ +$store.state.options[116] + +bonusAcc }}</p>
+        <div class="start__stats">
+          <input v-model="$store.state.options[116]" type="number" class="stats_input" placeholder="Start ACC" /><output class="stats_output">+{{ bonusAcc }}</output>
+        </div>
+        <div class="start__res">
+          <span>{{ $store.state.lang.acc }}-</span>
+          <p>{{ +$store.state.options[116] + +bonusAcc }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -125,10 +159,10 @@ export default {
       let resist = options.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) + (options[104] === "4" ? 10 : 0) + (options[105] === "2" ? 10 : 0) + (options[108] === "3" ? 50 : 0) + +options[101] + resultSet.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) * bonusSet;
       let acc = options.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) + (options[105] === "4" ? 10 : 0) + (options[108] === "5" ? 50 : 0) + +options[102] + resultSet.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) * bonusSet;
       //=========================================Присваиваем в DOM
-      this.bonusHp = hp_sum + (hp_100 * options[109]) / 100;
-      this.bonusAtk = atk_sum + (atk_100 * options[110]) / 100;
-      this.bonusDef = def_sum + (def_100 * options[111]) / 100;
-      this.bonusSpd = spd + (spd_100 * options[112]) / 100;
+      this.bonusHp = Math.round(hp_sum + (hp_100 * options[109]) / 100);
+      this.bonusAtk = Math.round(atk_sum + (atk_100 * options[110]) / 100);
+      this.bonusDef = Math.round(def_sum + (def_100 * options[111]) / 100);
+      this.bonusSpd = Math.round((spd + (spd_100 * options[112]) / 100) * 100) / 100;
       this.bonusCrate = cRate;
       this.bonusCdmg = cDmg;
       this.bonusResist = resist;
@@ -145,10 +179,13 @@ export default {
   font-size: 5vh;
   display: flex;
   flex-wrap: wrap;
-  height: 80%;
+  height: 100%;
 }
 .start {
   min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   input {
     width: 25%;
     padding: 0;
@@ -157,5 +194,17 @@ export default {
 }
 .stats p {
   display: inline-block;
+}
+.start__stats {
+  display: flex;
+  align-items: center;
+  width: 26%;
+  input {
+    width: 18vw;
+  }
+}
+.start__res {
+  display: flex;
+  min-width: 30%;
 }
 </style>
