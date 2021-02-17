@@ -8,7 +8,7 @@
       <div class="baza weapon" @change="disab">
         <select v-model="$store.state.options[1]" name="Weapon" class="wep">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+</option> </select
-        ><input v-model="$store.state.options[2]" type="number" /><select v-model="$store.state.options[3]" name="Weapon1">
+        ><input v-model="$store.state.options[2]" type="number" /><select v-model="$store.state.options[3]" @change="$store.state.options[4] = ''" name="Weapon1">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }} </option>
@@ -17,7 +17,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option>
           <option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option> </select
-        ><input v-model="$store.state.options[4]" type="number" /><select v-model="$store.state.options[5]" name="Weapon2">
+        ><input v-model="$store.state.options[4]" type="number" /><select v-model="$store.state.options[5]" @change="$store.state.options[6] = ''" name="Weapon2">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }} </option>
@@ -26,7 +26,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option>
           <option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option> </select
-        ><input v-model="$store.state.options[6]" type="number" /><select v-model="$store.state.options[7]" name="Weapon3">
+        ><input v-model="$store.state.options[6]" type="number" /><select v-model="$store.state.options[7]" @change="$store.state.options[8] = ''" name="Weapon3">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }} </option>
@@ -35,7 +35,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option>
           <option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option> </select
-        ><input v-model="$store.state.options[8]" type="number" /><select v-model="$store.state.options[9]" name="Weapon4">
+        ><input v-model="$store.state.options[8]" type="number" /><select v-model="$store.state.options[9]" @change="$store.state.options[10] = ''" name="Weapon4">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }} </option>
@@ -77,15 +77,19 @@ export default {
   },
   components: { Sets },
   methods: {
-    disab() {
-      selectDisabled(this);
+    disab(e) {
+      if (e.target.length) {
+        selectDisabled(this);
+
+        e.target.nextElementSibling.focus();
+      }
     },
     color() {
       borderColor(this);
     },
-    changeDisp() {
-      console.log(69, this.isActive);
-    },
+  },
+  updated() {
+    selectDisabled(this);
   },
 };
 </script>

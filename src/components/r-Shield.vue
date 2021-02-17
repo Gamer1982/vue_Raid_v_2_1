@@ -7,7 +7,7 @@
       <div class="baza shield9" @change="disab">
         <select v-model="$store.state.options[23]" name="Shield" class="wep">
           <option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+</option> </select
-        ><input v-model="$store.state.options[24]" type="number" /><select v-model="$store.state.options[25]" name="Shield1">
+        ><input v-model="$store.state.options[24]" type="number" /><select v-model="$store.state.options[25]" @change="$store.state.options[26] = ''"  name="Shield1">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+</option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }}</option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }}</option>
@@ -16,7 +16,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }}</option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}%</option>
           <option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}%</option> </select
-        ><input v-model="$store.state.options[26]" type="number" /><select v-model="$store.state.options[27]" name="Shield2">
+        ><input v-model="$store.state.options[26]" type="number" /><select v-model="$store.state.options[27]" @change="$store.state.options[28] = ''"  name="Shield2">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+</option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }}</option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }}</option>
@@ -25,7 +25,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }}</option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}%</option>
           <option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}%</option> </select
-        ><input v-model="$store.state.options[28]" type="number" /><select v-model="$store.state.options[29]" name="Shield3">
+        ><input v-model="$store.state.options[28]" type="number" /><select v-model="$store.state.options[29]" @change="$store.state.options[30] = ''"  name="Shield3">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+</option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }}</option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }}</option>
@@ -34,7 +34,7 @@
           <option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }}</option>
           <option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}%</option>
           <option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}%</option> </select
-        ><input v-model="$store.state.options[30]" type="number" /><select v-model="$store.state.options[31]" name="Shield4">
+        ><input v-model="$store.state.options[30]" type="number" /><select v-model="$store.state.options[31]"  @change="$store.state.options[32] = ''" name="Shield4">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+</option>
           <option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }}</option>
           <option value="cRate" :disabled="isCRate" class="cRate">{{ $store.state.lang.cRate }}</option>
@@ -75,12 +75,17 @@ export default {
     };
   },
   methods: {
-    disab() {
-      selectDisabled(this);
+    disab(e) {
+      if (e.target.length) {
+        selectDisabled(this);
+        e.target.nextElementSibling.focus();
+      }
     },
     color() {
       borderColor(this);
     },
+  },  updated() {
+    selectDisabled(this);
   },
 
   components: { Sets },

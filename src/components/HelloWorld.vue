@@ -208,8 +208,8 @@ export default {
           0,
           ,
           0,
-          0,
           ,
+          0,
           0,
           0,
           0,
@@ -373,8 +373,8 @@ export default {
         0,
         ,
         0,
-        0,
         ,
+        0,
         0,
         0,
         0,
@@ -499,7 +499,7 @@ export default {
   right: 1%;
   left: 65%;
   bottom: 1%;
-  top: 96%;
+  top: 95%;
   text-transform: uppercase;
 
   &__wrap {
@@ -523,7 +523,6 @@ export default {
   }
   .lang__select {
     select {
-      padding-right: 0 2vw 0 1vw;
       text-transform: uppercase;
       width: 4vw;
     }

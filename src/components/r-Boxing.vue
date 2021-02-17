@@ -6,7 +6,7 @@
       <Sets :index="index" @set-color="color" />
 
       <div class="baza boxing" @change="disab">
-        <select v-model="$store.state.options[34]" name="Boxing" class="wep">
+        <select v-model="$store.state.options[34]" @change="$store.state.options[35] = ''"  name="Boxing" class="wep">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -15,7 +15,7 @@
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[35]" type="number" /><select v-model="$store.state.options[36]" name="Boxing1">
+        ><input v-model="$store.state.options[35]" type="number" /><select v-model="$store.state.options[36]" @change="$store.state.options[37] = ''"  name="Boxing1">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -27,7 +27,7 @@
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
           ><option value="resist" :disabled="isResist" class="resist">{{ $store.state.lang.res }} </option
           ><option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option></select
-        ><input v-model="$store.state.options[37]" type="number" /><select v-model="$store.state.options[38]" name="Boxing2">
+        ><input v-model="$store.state.options[37]" type="number" /><select v-model="$store.state.options[38]" @change="$store.state.options[39] = ''"  name="Boxing2">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -39,7 +39,7 @@
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
           ><option value="resist" :disabled="isResist" class="resist">{{ $store.state.lang.res }} </option
           ><option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option></select
-        ><input v-model="$store.state.options[39]" type="number" /><select v-model="$store.state.options[40]" name="Boxing3">
+        ><input v-model="$store.state.options[39]" type="number" /><select v-model="$store.state.options[40]"  @change="$store.state.options[41] = ''" name="Boxing3">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -51,7 +51,7 @@
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
           ><option value="resist" :disabled="isResist" class="resist">{{ $store.state.lang.res }} </option
           ><option value="acc" :disabled="isAcc" class="acc">{{ $store.state.lang.acc }} </option></select
-        ><input v-model="$store.state.options[41]" type="number" /><select v-model="$store.state.options[42]" name="Boxing4">
+        ><input v-model="$store.state.options[41]" type="number" /><select v-model="$store.state.options[42]" @change="$store.state.options[43] = ''"  name="Boxing4">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -95,12 +95,17 @@ export default {
     };
   },
   methods: {
-    disab() {
-      selectDisabled(this);
+    disab(e) {
+      if (e.target.length) {
+        selectDisabled(this);
+        e.target.nextElementSibling.focus();
+      }
     },
     color() {
       borderColor(this);
     },
+  },  updated() {
+    selectDisabled(this);
   },
 
   components: { Sets },

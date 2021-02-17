@@ -5,32 +5,32 @@
       <div class="image2 ring-1"></div>
 
       <div class="ring" @change="disab">
-        <select class="atr" v-model="$store.state.options[66]" name="Ring">
+        <select class="atr" v-model="$store.state.options[66]" @change="$store.state.options[67] = ''"  name="Ring">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option></select
-        ><input v-model="$store.state.options[67]" type="number" /><select v-model="$store.state.options[68]" name="Ring1">
+        ><input v-model="$store.state.options[67]" type="number" /><select v-model="$store.state.options[68]" @change="$store.state.options[69] = ''"  name="Ring1">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[69]" type="number" /><select v-model="$store.state.options[70]" name="Ring2">
+        ><input v-model="$store.state.options[69]" type="number" /><select v-model="$store.state.options[70]" @change="$store.state.options[71] = ''"  name="Ring2">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[71]" type="number" /><select v-model="$store.state.options[72]" name="Ring3">
+        ><input v-model="$store.state.options[71]" type="number" /><select v-model="$store.state.options[72]" @change="$store.state.options[73] = ''"  name="Ring3">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[73]" type="number" /><select v-model="$store.state.options[74]" name="Ring4">
+        ><input v-model="$store.state.options[73]" type="number" /><select v-model="$store.state.options[74]" @change="$store.state.options[75] = ''"  name="Ring4">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
@@ -66,9 +66,14 @@ export default {
     };
   },
   methods: {
-    disab() {
-      selectDisabled(this);
+    disab(e) {
+      if (e.target.length) {
+        selectDisabled(this);
+        e.target.nextElementSibling.focus();
+      }
     },
+  },  updated() {
+    selectDisabled(this);
   },
 };
 </script>
