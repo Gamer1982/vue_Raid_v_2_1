@@ -37,7 +37,7 @@
         </div>
         <div class="start__res">
           <span>{{ $store.state.lang.spd }}-</span>
-          <p>{{ +$store.state.options[112] + +bonusSpd }}</p>
+          <p>{{ Math.round((+$store.state.options[112] + +bonusSpd) * 100) / 100 }}</p>
         </div>
       </div>
 
@@ -158,15 +158,15 @@ export default {
       let cDmg = options.filter((item, i, arr) => arr[i - 1] === "cDmg").reduce((a, b) => +a + +b) + (options[106] === "1" ? 10 : 0) + (options[108] === "1" ? 20 : 0) + +options[100] + resultSet.filter((item, i, arr) => arr[i - 1] === "cDmg").reduce((a, b) => +a + +b) * bonusSet;
       let resist = options.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) + (options[104] === "4" ? 10 : 0) + (options[105] === "2" ? 10 : 0) + (options[108] === "3" ? 50 : 0) + +options[101] + resultSet.filter((item, i, arr) => arr[i - 1] === "resist").reduce((a, b) => +a + +b) * bonusSet;
       let acc = options.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) + (options[105] === "4" ? 10 : 0) + (options[108] === "5" ? 50 : 0) + +options[102] + resultSet.filter((item, i, arr) => arr[i - 1] === "acc").reduce((a, b) => +a + +b) * bonusSet;
-      //=========================================Присваиваем в DOM
+      //=========================================Присваиваем в DOM ++ Извращение с плавающей запятой
       this.bonusHp = Math.round(hp_sum + (hp_100 * options[109]) / 100);
       this.bonusAtk = Math.round(atk_sum + (atk_100 * options[110]) / 100);
       this.bonusDef = Math.round(def_sum + (def_100 * options[111]) / 100);
       this.bonusSpd = Math.round((spd + (spd_100 * options[112]) / 100) * 100) / 100;
-      this.bonusCrate = cRate;
-      this.bonusCdmg = cDmg;
-      this.bonusResist = resist;
-      this.bonusAcc = acc;
+      this.bonusCrate = Math.round(cRate * 100) / 100;
+      this.bonusCdmg = Math.round(cDmg * 100) / 100;
+      this.bonusResist = Math.round(resist * 100) / 100;
+      this.bonusAcc = Math.round(acc * 100) / 100;
 
       //console.log(resultSet, bonusSet, "hp_sum = ", hp_sum, "hp_100", hp_100, "atk_sum=", atk_sum, "atk_100", atk_100, "def_sum", def_sum, "def_100", def_100, "spd", spd, "cRate", cRate, "cDmg", cDmg, "resist", resist, "acc", acc, "set");
     },
