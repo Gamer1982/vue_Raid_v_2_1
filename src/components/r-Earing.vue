@@ -82,5 +82,6 @@ export default {
 <style lang="scss">
 .top_earing {
   border: solid 1px gray;
+	z-index: 12;
 }
 </style>

@@ -208,7 +208,6 @@ select {
   //right: 34vw;
   width: 14vw;
   height: 30vh;
-  z-index: 11;
   background: #162850;
 }
 .active option {

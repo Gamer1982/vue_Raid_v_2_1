@@ -116,5 +116,6 @@ export default {
 <style lang="scss">
 .top_armor {
   border: solid 0.2em gray;
+	z-index: 16;
 }
 </style>

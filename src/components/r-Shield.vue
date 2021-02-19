@@ -95,5 +95,6 @@ export default {
 <style lang="scss">
 .top_shield {
   border: solid 0.2em gray;
+	z-index: 18;
 }
 </style>

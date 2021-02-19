@@ -81,5 +81,6 @@ export default {
 <style lang="scss">
 .top_ring {
   border: solid 1px gray;
+	z-index: 13;
 }
 </style>

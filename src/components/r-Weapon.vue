@@ -97,5 +97,6 @@ export default {
 <style lang="scss">
 .top_weapon {
   border: solid 0.2em gray;
+  z-index: 20;
 }
 </style>

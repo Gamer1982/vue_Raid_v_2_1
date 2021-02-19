@@ -115,5 +115,6 @@ export default {
 <style lang="scss">
 .top_boxing {
   border: solid 0.2em gray;
+	z-index: 17;
 }
 </style>

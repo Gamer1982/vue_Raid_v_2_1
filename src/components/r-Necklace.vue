@@ -88,5 +88,6 @@ export default {
 <style lang="scss">
 .top_necklace {
   border: solid 1px gray;
+  z-index: 11;
 }
 </style>

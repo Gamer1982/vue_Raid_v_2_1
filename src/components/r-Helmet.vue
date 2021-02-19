@@ -8,7 +8,7 @@
       <div class="baza helmet" @change="disab">
         <select v-model="$store.state.options[12]" name="Helmet" class="wep">
           <option value="hp_sum" :disabled="isHp_sum" class="hp_sum">{{ $store.state.lang.hp }}+ </option></select
-        ><input v-model="$store.state.options[13]" type="number" /><select v-model="$store.state.options[14]" @change="$store.state.options[15] = ''"  name="Helmet1">
+        ><input v-model="$store.state.options[13]" type="number" /><select v-model="$store.state.options[14]" @change="$store.state.options[15] = ''" name="Helmet1">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
@@ -19,7 +19,7 @@
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[15]" type="number" /><select v-model="$store.state.options[16]" @change="$store.state.options[17] = ''"  name="Helmet2">
+        ><input v-model="$store.state.options[15]" type="number" /><select v-model="$store.state.options[16]" @change="$store.state.options[17] = ''" name="Helmet2">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
@@ -30,7 +30,7 @@
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[17]" type="number" /><select v-model="$store.state.options[18]" @change="$store.state.options[19] = ''"  name="Helmet3">
+        ><input v-model="$store.state.options[17]" type="number" /><select v-model="$store.state.options[18]" @change="$store.state.options[19] = ''" name="Helmet3">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
@@ -41,7 +41,7 @@
           ><option value="atk_100" :disabled="isAtk_100" class="atk_100">{{ $store.state.lang.atk }}% </option
           ><option value="hp_100" :disabled="isHp_100" class="hp_100">{{ $store.state.lang.hp }}% </option
           ><option value="def_100" :disabled="isDef_100" class="def_100">{{ $store.state.lang.def }}% </option></select
-        ><input v-model="$store.state.options[19]" type="number" /><select v-model="$store.state.options[20]"  @change="$store.state.options[21] = ''" name="Helmet4">
+        ><input v-model="$store.state.options[19]" type="number" /><select v-model="$store.state.options[20]" @change="$store.state.options[21] = ''" name="Helmet4">
           <option value="atk_sum" :disabled="isAtk_sum" class="atk_sum">{{ $store.state.lang.atk }}+ </option
           ><option value="def_sum" :disabled="isDef_sum" class="def_sum">{{ $store.state.lang.def }}+ </option
           ><option value="spd" :disabled="isSpd" class="spd">{{ $store.state.lang.spd }} </option
@@ -94,7 +94,8 @@ export default {
     color() {
       borderColor(this);
     },
-  },  updated() {
+  },
+  updated() {
     selectDisabled(this);
   },
 
@@ -105,5 +106,6 @@ export default {
 <style lang="scss">
 .top_helmet {
   border: solid 0.2em gray;
+  z-index: 19;
 }
 </style>

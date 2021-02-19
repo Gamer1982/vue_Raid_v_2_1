@@ -115,5 +115,6 @@ export default {
 <style lang="scss">
 .top_sneakers {
   border: solid 0.2em gray;
+  z-index: 14;
 }
 </style>
