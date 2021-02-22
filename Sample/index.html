@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <input type="text" v-model="text" />
+      <input type="text" v-model="user.name" />
+      <input type="text" v-model="user.email" />
+      <button @click.prevent="getLowerText">{{ sub }}</button>
+      <button @click="isShow=!isShow">{{ buton }}</button>
+      <p>{{ toLower }}</p>
+      <div class="show" v-if="isShow">
+        <h2>{{ sub }}</h2>
+      </div>
+      <ul v-if="isShow">
+        <li v-for="(item,id) in users" :key="id">
+          <p>{{`${id+1} ${item}`}}</p>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "Methods",
+          text: "",
+          user: {
+            name: "Alex",
+            email: "pp@.com",
+          },
+          users: ["Alex", "Igor", "Petya"],
+          sub: "Get Lower Case",
+          isShow: false,
+        },
+        created() {
+          alert(`Number is created ${Date.now().toLocaleString()}`);
+        },
+        mounted() {
+          alert(`Number is mounted ${Date.now().toLocaleString()}`);
+        },
+        methods: {
+          getLowerText() {
+            console.log(`Hello ${this.user.email}`);
+            this.text = this.text.toLowerCase();
+          },
+        },
+        computed: {
+          toLower() {
+            return this.text.toLowerCase();
+          },
+          buton() {
+            return this.isShow ? "spryatat" : "pokazat";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

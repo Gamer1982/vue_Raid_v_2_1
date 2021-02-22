@@ -23,7 +23,7 @@
     "cordova-serve-osx": "cross-env CORDOVA_PLATFORM=osx vue-cli-service cordova-serve-osx"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "core-js": "^3.9.0",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
   },
@@ -31,6 +31,7 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "compression-webpack-plugin": "^7.1.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-cordova": "~2.4.1",

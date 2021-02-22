@@ -1,6 +1,7 @@
 module.exports = {
-  publicPath: '',
+  publicPath: process.env.NODE_ENV === "production" ? "" : "/",
+  productionSourceMap: false,
   pluginOptions: {
-    cordovaPath: 'src-cordova'
-  }
-}
+    cordovaPath: "src-cordova",
+  },
+};
