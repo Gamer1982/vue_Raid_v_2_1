@@ -44,6 +44,9 @@
       <option value="40(4) resist,40" class="resist untouchable">{{ $store.state.lang.untouchable }}</option>
       <option value="41(4) cDmg,30" class="cDmg affinitybreaker">{{ $store.state.lang.affinitybreaker }}</option>
       <option value="42(2):" class="frostbite">{{ $store.state.lang.frostbite }} </option>
+		<option value="43(4) cRate,12" class="cRate bloodthirst">{{ $store.state.lang.bloodthirst }} </option>
+		<option value="44(4):" class="guardian">{{ $store.state.lang.guardian }} </option>
+
     </select>
   </div>
 </template>

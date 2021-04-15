@@ -128,6 +128,12 @@ export default (t) => {
     case "42":
       t.vStyle = "border: #9BFEFF 0.15em dashed";
       break;
+	 case "43":
+		t.vStyle = "border: #D9B37E 0.2em dashed";
+		break;
+	 case "44":
+		t.vStyle = "border: #FFC869 0.2em dashed";
+		break;
     case "00":
       t.vStyle = "border: solid 0.1em gray";
       break;
