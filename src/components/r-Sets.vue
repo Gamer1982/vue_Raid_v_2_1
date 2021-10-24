@@ -46,6 +46,9 @@
       <option value="42(2):" class="frostbite">{{ $store.state.lang.frostbite }} </option>
 		<option value="43(4) cRate,12" class="cRate bloodthirst">{{ $store.state.lang.bloodthirst }} </option>
 		<option value="44(4):" class="guardian">{{ $store.state.lang.guardian }} </option>
+		<option value="45(2) resist,40,def_100,10" class="resist def_100 fortitude">{{ $store.state.lang.fortitude }} </option>
+		<option value="46(4) cRate,10" class="cRate lethal">{{ $store.state.lang.lethal }} </option>
+
 
     </select>
   </div>

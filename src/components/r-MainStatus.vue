@@ -168,7 +168,7 @@ export default {
       this.bonusResist = Math.round(resist * 100) / 100;
       this.bonusAcc = Math.round(acc * 100) / 100;
 
-      //console.log(resultSet, bonusSet, "hp_sum = ", hp_sum, "hp_100", hp_100, "atk_sum=", atk_sum, "atk_100", atk_100, "def_sum", def_sum, "def_100", def_100, "spd", spd, "cRate", cRate, "cDmg", cDmg, "resist", resist, "acc", acc, "set");
+      console.log(`resultSet: ${resultSet}`, bonusSet, "hp_sum = ", hp_sum, "hp_100", hp_100, "atk_sum=", atk_sum, "atk_100", atk_100, "def_sum", def_sum, "def_100", def_100, "spd", spd, "cRate", cRate, "cDmg", cDmg, "resist", resist, "acc", acc, "set");
     },
   },
 };
