@@ -70,6 +70,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "C.R",
       minCritDamage: "C.D",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    ru: {
       choose: "Выберите сет",
@@ -142,6 +145,9 @@ export default {
       set_15: "СЕТ +15%",
       minCritRate: "К.Ш",
       minCritDamage: "К.У",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    fr: {
       choose: "Choisissez un ensemble",
@@ -214,6 +220,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "T.C.",
       minCritDamage: "DÉG C.",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    du: {
       choose: "Wählen Sie einen Satz",
@@ -286,6 +295,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "K.-Q.",
       minCritDamage: "K.-D.",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    it: {
       choose: "Scegli un set",
@@ -358,6 +370,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "T.D.",
       minCritDamage: "D D",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    es: {
       choose: "Choose a set",
@@ -430,6 +445,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "P.C.",
       minCritDamage: "D.C",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    pt: {
       choose: "Escolha um conjunto",
@@ -502,6 +520,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "T.C.",
       minCritDamage: "D C.",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    ko: {
       choose: "세트 정보",
@@ -574,6 +595,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "C.R",
       minCritDamage: "C.D",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    zh: {
       choose: "套組資訊",
@@ -646,6 +670,9 @@ export default {
       set_15: "套組資訊 +15%",
       minCritRate: "暴擊率",
       minCritDamage: "暴擊傷害-",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    ja: {
       choose: "キット",
@@ -718,6 +745,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "C.率",
       minCritDamage: "C.ダメージ",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    tr: {
       choose: "Bilgiler",
@@ -790,6 +820,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "K.oR",
       minCritDamage: "K.DMg",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
    uk: {
       choose: "Виберіть сет",
@@ -862,6 +895,9 @@ export default {
       set_15: "SET +15%",
       minCritRate: "К.ШаНС",
       minCritDamage: "К.УРоН",
+		rank: "rank",
+		empower: "empower",
+		faction: "faction",
    },
 };
 //return language.filter((item) => item === lan);
