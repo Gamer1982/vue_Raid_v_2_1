@@ -134,6 +134,12 @@
       <option value="46(4) cRate,10" class="cRate lethal">
         {{ $store.state.lang.lethal }}
       </option>
+      <option value="47(6)" class="resist protection">
+        {{ $store.state.lang.protection }}
+      </option>
+      <option value="48(6)" class="hp_100 stone_skin">
+        {{ $store.state.lang.stone_skin }}
+      </option>
     </select>
   </div>
 </template>

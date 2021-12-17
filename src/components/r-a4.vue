@@ -7,6 +7,7 @@
           <select
             v-model="$store.state.options[117]"
             :class="clas"
+            @input="resetFaction"
             name=""
             id=""
           >
@@ -50,10 +51,11 @@ export default {
       clas: `gold`,
     };
   },
-  beforeMount() {
-    this.clas = this.$store.state.options[117];
-  },
+  //   beforeCreate() {
+  //     this.clas = this.$store.state.options[117];
+  //   },
   beforeUpdate() {
+    this.clas = this.$store.state.options[117];
     switch (this.$store.state.options[117]) {
       case "3":
         this.clas = "gold";
@@ -72,6 +74,12 @@ export default {
         break;
     }
   },
+  methods: {
+    resetFaction() {
+      this.$store.state.options[118] = 0;
+      this.$store.state.options[119] = 0;
+    },
+  },
 };
 </script>
 
@@ -80,13 +88,15 @@ export default {
   display: flex;
   text-align: center;
   gap: 5%;
+  
 }
 .power_person {
   width: 20%;
   margin-right: 40%;
   margin-left: 5%;
 }
-.power_person select {
+.power select {
+  width: auto;
   //color: rgb(172, 113, 36);
 }
 .power_dabl {
