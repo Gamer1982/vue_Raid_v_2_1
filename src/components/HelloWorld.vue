@@ -3,40 +3,16 @@
     <div class="lang">
       <div class="lang__wrap">
         <div class="lang__input">
-          <input
-            list="title"
-            placeholder="For screenshot"
-            v-model="title"
-            @input="changeTitle"
-          />
+          <input list="title" placeholder="For screenshot" v-model="title" @input="changeTitle" />
           <datalist id="title">
-            <option
-              v-for="(title, i) in local"
-              :key="i"
-              :value="title"
-            ></option>
+            <option v-for="(title, i) in local" :key="i" :value="title"></option>
           </datalist>
 
-          <input
-            type="button"
-            :value="save"
-            :style="saveStile"
-            @click="saveTitle"
-          />
-          <input
-            type="button"
-            value="RESET"
-            :style="resetStile"
-            @click="allReset"
-          />
+          <input type="button" :value="save" :style="saveStile" @click="saveTitle" />
+          <input type="button" value="RESET" :style="resetStile" @click="allReset" />
         </div>
         <div class="lang__select">
-          <select
-            name="langg"
-            class="langg"
-            v-model="selectedLanguage"
-            @change="changeLanguage"
-          >
+          <select name="langg" class="langg" v-model="selectedLanguage" @change="changeLanguage">
             <option value="en">en</option>
             <option value="ru">ru</option>
             <option value="fr">fr</option>
@@ -102,9 +78,7 @@ export default {
       } else {
         this.save = "SAVE";
       }
-      let titleArray = JSON.parse(
-        localStorage.getItem(`${this.title.toUpperCase()}`)
-      );
+      let titleArray = JSON.parse(localStorage.getItem(`${this.title.toUpperCase()}`));
 
       if (titleArray) {
         this.$store.commit("CHANGE_OPTIONS_TO_STATE", titleArray);
@@ -115,10 +89,7 @@ export default {
 
     saveTitle() {
       //Сохранение/Удаление в локальном хранилище нового набора option с использованием Title(Имени)
-      if (
-        this.title.slice(-4).toUpperCase() === " DEL" &&
-        this.saveStile === "background-color: red"
-      ) {
+      if (this.title.slice(-4).toUpperCase() === " DEL" && this.saveStile === "background-color: red") {
         this.saveStile = "background-color: ghostwhite";
         this.save = "SAVE";
         localStorage.removeItem(this.title.slice(0, -4));
@@ -126,17 +97,10 @@ export default {
         localStorage.setItem("title", this.title.toUpperCase());
       } else if (this.title.slice(-4).toUpperCase() === " DEL") {
         this.saveStile = "background-color: red";
-      } else if (
-        this.title !== "" &&
-        this.title !== "ADD NAME" &&
-        this.saveStile === "background-color: ghostwhite"
-      ) {
+      } else if (this.title !== "" && this.title !== "ADD NAME" && this.saveStile === "background-color: ghostwhite") {
         this.saveStile = "background-color: green";
       } else if (this.title !== "" && this.title !== "ADD NAME") {
-        localStorage.setItem(
-          `${this.title.toUpperCase()}`,
-          JSON.stringify(this.$store.state.options)
-        );
+        localStorage.setItem(`${this.title.toUpperCase()}`, JSON.stringify(this.$store.state.options));
         this.storage.push(`${this.title.toUpperCase()}`);
         this.saveStile = "background-color: ghostwhite";
       } else {
@@ -150,6 +114,7 @@ export default {
         this.resetStile = "background-color: pink";
       } else {
         this.title = "";
+
         this.$store.commit("CHANGE_OPTIONS_TO_STATE", [
           "00",
           "atk_sum",
@@ -268,7 +233,7 @@ export default {
           "",
           "",
           "",
-          3,
+          "3",
           0,
           0,
           0,
@@ -475,9 +440,7 @@ export default {
 
   computed: {
     local() {
-      this.storage = Object.keys(localStorage).filter(
-        (item) => item !== item.toLowerCase()
-      );
+      this.storage = Object.keys(localStorage).filter((item) => item !== item.toLowerCase());
       return this.storage;
     },
   },

@@ -177,7 +177,7 @@ export default {
       switch (mutation.type) {
         case "CHANGE_OPTIONS_TO_STATE":
           this.$emit("set-color");
-          console.log("subscribe");
+          //   console.log("subscribe");
           break;
       }
     });

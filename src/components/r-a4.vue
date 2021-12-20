@@ -4,13 +4,7 @@
       <div class="a4_main power">
         <div class="power_person">
           <h2>{{ $store.state.lang.rank }}</h2>
-          <select
-            v-model="$store.state.options[117]"
-            :class="clas"
-            @input="resetFaction"
-            name=""
-            id=""
-          >
+          <select v-model="$store.state.options[117]" :class="clas" @input="resetFaction" name="" id="">
             <option class="gold" value="3">Legendary</option>
             <option class="purpur" value="2">Epic</option>
             <option class="blue" value="1">Rare</option>
@@ -56,6 +50,7 @@ export default {
   //   },
   beforeUpdate() {
     this.clas = this.$store.state.options[117];
+    //  console.log("log_a4_beforeUpdate()", this.$store.state.options[117]);
     switch (this.$store.state.options[117]) {
       case "3":
         this.clas = "gold";
@@ -88,7 +83,6 @@ export default {
   display: flex;
   text-align: center;
   gap: 5%;
-  
 }
 .power_person {
   width: 20%;
