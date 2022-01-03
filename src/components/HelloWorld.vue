@@ -3,7 +3,7 @@
     <div class="lang">
       <div class="lang__wrap">
         <div class="lang__input">
-          <input list="title" placeholder="For screenshot" v-model="title" @input="changeTitle" />
+          <input list="title" placeholder="Name del- delete " v-model="title" @input="changeTitle" />
           <datalist id="title">
             <option v-for="(title, i) in local" :key="i" :value="title"></option>
           </datalist>
@@ -95,6 +95,8 @@ export default {
         localStorage.removeItem(this.title.slice(0, -4));
         this.title = "";
         localStorage.setItem("title", this.title.toUpperCase());
+        //Возможно будет не удобно с перезагрузкой
+        //window.location.reload();
       } else if (this.title.slice(-4).toUpperCase() === " DEL") {
         this.saveStile = "background-color: red";
       } else if (this.title !== "" && this.title !== "ADD NAME" && this.saveStile === "background-color: ghostwhite") {
